@@ -46,7 +46,25 @@ In other words: The LDoc colum in the following table represents the "minimum re
 
 | Scope | Feature | eldoc | LDoc | JSDoc |
 |:---:|:---:|:---:|:---:|:---:|
-| CLI | TBD | TBD | TBD | TBD |
+| CLI | Configurable output directory | --- | ✓ | TBD |
+| CLI | Configurable output file name | --- | ✓ | TBD |
+| CLI | Configurable output file format | TBD | ✓ | TBD |
+| CLI | Configuration via CLI arguments | TBD | ✓ | TBD |
+| CLI | Configuration via config file | TBD | ✓ | TBD |
+| Output | Custom CSS template (for HTML output) | --- | ✓ | TBD |
+| Output | Custom project name | TBD | ✓ | TBD |
+| Output | Custom page title | TBD | ✓ | TBD |
+| Parsing | Also document local functions | --- | ✓ | TBD |
+| Parsing | Auto-detect namespaces | TBD | --- | TBD |
+| Parsing | Auto-exclude irrelevant block comments | TBD | --- | TBD |
+| Parsing | Auto-detect namespaces across multiple files | TBD | --- | TBD |
+| Parsing | C/C++ support | TBD | ✓ | TBD |
+| Tags | Cross-references | TBD | TBD | ✓ |
+| Tags | Multiple return values | TBD | ✓ | TBD |
+| Tags | Mandatory Parameters | TBD | ✓ | ✓ |
+| Tags | Optional Parameters | TBD | ✓ | --- |
+| Tags | Type annotations | TBD | ✓ | TBD |
+| Tags | TBD | TBD | TBD | TBD |
 
 TODO Add overview of min/max feature set
 
