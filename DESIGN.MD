@@ -2,7 +2,9 @@
 
 TODO Add summary
 
-EvoDoc is an experimental documentation generator for use with Lua programs, designed to generate API documentations automatically. It works mostly like existing tools such as LDoc, following the JavaDoc convention of using ``@``-tags and comment sections.
+TODO Decide on a name
+
+eldoc is an experimental documentation generator for use with Lua programs, designed to generate API documentations automatically. It works mostly like existing tools such as LDoc, following the JavaDoc convention of using ``@``-tags and comment sections.
 
 ## Why create a new tool?
 
@@ -42,9 +44,9 @@ Since EvoDoc is inspired by tools such as LDoc and the original LuaDoc, most of 
 
 In other words: The LDoc colum in the following table represents the "minimum required feature set" before I would consider the tool "complete", and the JSDoc one represents the "ideally supported feature set" (a list of things that would be "nice to have").
 
-| Scope | Feature | LDoc | JSDoc |
-|:---:|:---:|:---:|:---:|
-| CLI | TBD | TBD | TBD |
+| Scope | Feature | eldoc | LDoc | JSDoc |
+|:---:|:---:|:---:|:---:|:---:|
+| CLI | TBD | TBD | TBD | TBD |
 
 TODO Add overview of min/max feature set
 
