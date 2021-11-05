@@ -1,0 +1,496 @@
+{
+    "type": "Chunk",
+    "body": [
+        {
+            "type": "LocalStatement",
+            "variables": [{ "type": "Identifier", "name": "fs" }],
+            "init": [
+                {
+                    "type": "CallExpression",
+                    "base": { "type": "Identifier", "name": "require" },
+                    "arguments": [{ "type": "StringLiteral", "value": null, "raw": "\"fs\"" }]
+                }
+            ]
+        },
+        {
+            "type": "LocalStatement",
+            "variables": [{ "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY" }],
+            "init": [{ "type": "StringLiteral", "value": null, "raw": "\"directory\"" }]
+        },
+        {
+            "type": "LocalStatement",
+            "variables": [{ "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_FILE" }],
+            "init": [{ "type": "StringLiteral", "value": null, "raw": "\"file\"" }]
+        },
+        {
+            "type": "LocalStatement",
+            "variables": [{ "type": "Identifier", "name": "C_FileSystem" }],
+            "init": [{ "type": "TableConstructorExpression", "fields": [] }]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "CreateDirectory" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "mkdirp" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "Exists" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "access" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [
+                                { "type": "Identifier", "name": "path" },
+                                { "type": "StringLiteral", "value": null, "raw": "\"R\"" }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "IsFile" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "LocalStatement",
+                    "variables": [{ "type": "Identifier", "name": "fileAttributes" }],
+                    "init": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "stat" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                        }
+                    ]
+                },
+                {
+                    "type": "IfStatement",
+                    "clauses": [
+                        {
+                            "type": "IfClause",
+                            "condition": {
+                                "type": "UnaryExpression",
+                                "operator": "not",
+                                "argument": { "type": "Identifier", "name": "fileAttributes" }
+                            },
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "arguments": [{ "type": "BooleanLiteral", "value": false, "raw": "false" }]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "BinaryExpression",
+                            "operator": "==",
+                            "left": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "type" },
+                                "base": { "type": "Identifier", "name": "fileAttributes" }
+                            },
+                            "right": { "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_FILE" }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "IsDirectory" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "LocalStatement",
+                    "variables": [{ "type": "Identifier", "name": "fileAttributes" }],
+                    "init": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "stat" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                        }
+                    ]
+                },
+                {
+                    "type": "IfStatement",
+                    "clauses": [
+                        {
+                            "type": "IfClause",
+                            "condition": {
+                                "type": "UnaryExpression",
+                                "operator": "not",
+                                "argument": { "type": "Identifier", "name": "fileAttributes" }
+                            },
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "arguments": [{ "type": "BooleanLiteral", "value": false, "raw": "false" }]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "BinaryExpression",
+                            "operator": "==",
+                            "left": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "type" },
+                                "base": { "type": "Identifier", "name": "fileAttributes" }
+                            },
+                            "right": { "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY" }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "Delete" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "IfStatement",
+                    "clauses": [
+                        {
+                            "type": "IfClause",
+                            "condition": {
+                                "type": "UnaryExpression",
+                                "operator": "not",
+                                "argument": {
+                                    "type": "CallExpression",
+                                    "base": {
+                                        "type": "MemberExpression",
+                                        "indexer": ".",
+                                        "identifier": { "type": "Identifier", "name": "Exists" },
+                                        "base": { "type": "Identifier", "name": "C_FileSystem" }
+                                    },
+                                    "arguments": [{ "type": "Identifier", "name": "path" }]
+                                }
+                            },
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "arguments": [{ "type": "BooleanLiteral", "value": false, "raw": "false" }]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "IfStatement",
+                    "clauses": [
+                        {
+                            "type": "IfClause",
+                            "condition": {
+                                "type": "CallExpression",
+                                "base": {
+                                    "type": "MemberExpression",
+                                    "indexer": ".",
+                                    "identifier": { "type": "Identifier", "name": "IsDirectory" },
+                                    "base": { "type": "Identifier", "name": "C_FileSystem" }
+                                },
+                                "arguments": [{ "type": "Identifier", "name": "path" }]
+                            },
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "arguments": [
+                                        {
+                                            "type": "CallExpression",
+                                            "base": {
+                                                "type": "MemberExpression",
+                                                "indexer": ".",
+                                                "identifier": { "type": "Identifier", "name": "rmrf" },
+                                                "base": { "type": "Identifier", "name": "fs" }
+                                            },
+                                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "unlink" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "ReadFile" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "readFile" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "ScanDirectory" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "body": [
+                {
+                    "type": "LocalStatement",
+                    "variables": [{ "type": "Identifier", "name": "directoryIterator" }],
+                    "init": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "scandir" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                        }
+                    ]
+                },
+                {
+                    "type": "IfStatement",
+                    "clauses": [
+                        {
+                            "type": "IfClause",
+                            "condition": {
+                                "type": "UnaryExpression",
+                                "operator": "not",
+                                "argument": { "type": "Identifier", "name": "directoryIterator" }
+                            },
+                            "body": [{ "type": "ReturnStatement", "arguments": [] }]
+                        }
+                    ]
+                },
+                {
+                    "type": "LocalStatement",
+                    "variables": [{ "type": "Identifier", "name": "directoryContents" }],
+                    "init": [{ "type": "TableConstructorExpression", "fields": [] }]
+                },
+                {
+                    "type": "ForGenericStatement",
+                    "variables": [{ "type": "Identifier", "name": "directoryItemInfo" }],
+                    "iterators": [{ "type": "Identifier", "name": "directoryIterator" }],
+                    "body": [
+                        {
+                            "type": "LocalStatement",
+                            "variables": [{ "type": "Identifier", "name": "name" }],
+                            "init": [
+                                {
+                                    "type": "MemberExpression",
+                                    "indexer": ".",
+                                    "identifier": { "type": "Identifier", "name": "name" },
+                                    "base": { "type": "Identifier", "name": "directoryItemInfo" }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "LocalStatement",
+                            "variables": [{ "type": "Identifier", "name": "type" }],
+                            "init": [
+                                {
+                                    "type": "MemberExpression",
+                                    "indexer": ".",
+                                    "identifier": { "type": "Identifier", "name": "type" },
+                                    "base": { "type": "Identifier", "name": "directoryItemInfo" }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "LocalStatement",
+                            "variables": [{ "type": "Identifier", "name": "canWalkRecursively" }],
+                            "init": [
+                                {
+                                    "type": "BinaryExpression",
+                                    "operator": "==",
+                                    "left": { "type": "Identifier", "name": "type" },
+                                    "right": { "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY" }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "AssignmentStatement",
+                            "variables": [
+                                {
+                                    "type": "IndexExpression",
+                                    "base": { "type": "Identifier", "name": "directoryContents" },
+                                    "index": { "type": "Identifier", "name": "name" }
+                                }
+                            ],
+                            "init": [{ "type": "Identifier", "name": "canWalkRecursively" }]
+                        }
+                    ]
+                },
+                { "type": "ReturnStatement", "arguments": [{ "type": "Identifier", "name": "directoryContents" }] }
+            ]
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": { "type": "Identifier", "name": "WriteFile" },
+                "base": { "type": "Identifier", "name": "C_FileSystem" }
+            },
+            "isLocal": false,
+            "parameters": [{ "type": "Identifier", "name": "path" }, { "type": "Identifier", "name": "data" }],
+            "body": [
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": { "type": "Identifier", "name": "writeFile" },
+                                "base": { "type": "Identifier", "name": "fs" }
+                            },
+                            "arguments": [
+                                { "type": "Identifier", "name": "path" },
+                                { "type": "Identifier", "name": "data" },
+                                { "type": "BooleanLiteral", "value": true, "raw": "true" }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "AssignmentStatement",
+            "variables": [
+                {
+                    "type": "MemberExpression",
+                    "indexer": ".",
+                    "identifier": { "type": "Identifier", "name": "C_FileSystem" },
+                    "base": { "type": "Identifier", "name": "_G" }
+                }
+            ],
+            "init": [{ "type": "Identifier", "name": "C_FileSystem" }]
+        }
+    ],
+    "comments": [
+        {
+            "type": "Comment",
+            "value": " Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly",
+            "raw": "-- Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly"
+        },
+        {
+            "type": "Comment",
+            "value": " Always make parent directories, as that's more convenient",
+            "raw": "-- Always make parent directories, as that's more convenient"
+        }
+    ]
+}
