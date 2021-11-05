@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/evo-lua/eldoc/issues"
   },
-  "homepage": "https://github.com/evo-lua/eldoc#readme"
+  "homepage": "https://github.com/evo-lua/eldoc#readme",
+  "dependencies": {
+    "luaparse": "0.3.1"
+  }
 }
