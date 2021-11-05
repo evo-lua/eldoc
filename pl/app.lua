@@ -14,10 +14,7 @@ local app = {}
 -- The name will be the name as passed on the command line
 -- @return string filename
 function app.script_name()
-    if _G.arg and _G.arg[0] then
-        return _G.arg[0]
-    end
-    return utils.raise("No script name found")
+	return _G.USER_SCRIPT_FILE
 end
 
 --- prefixes the current script's path to the Lua module path.

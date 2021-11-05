@@ -1,13 +1,14 @@
-local PWD = os.getenv("PWD")
+local uv = require("uv")
+local PWD = uv.cwd()
 
 local run
-if not arg[1] then
+if not _G.args[2] then
   run = function (dir)
      local cmd = 'cd '..dir..' && lua '..PWD..'/ldoc.lua --testing . && diff -r doc cdocs'
      print(cmd)
      os.execute(cmd)
   end
-elseif arg[1] == 'update' then
+elseif _G.args[2] == 'update' then
    run = function (dir)
      local cmd = 'cd '..dir..' && lua '..PWD..'/ldoc.lua --dir cdocs --testing .'
      print(cmd)

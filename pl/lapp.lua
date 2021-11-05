@@ -182,7 +182,7 @@ end
 function lapp.process_options_string(str,args)
     local results = {}
     local varargs
-    local arg = args or _G.arg
+    local arg = args or _G.args
     open_files = {}
     parms = {}
     aliases = {}

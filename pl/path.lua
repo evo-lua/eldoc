@@ -22,13 +22,13 @@ local utils = require 'pl.utils'
 local assert_string,raise = utils.assert_string,utils.raise
 
 local res,lfs = _G.pcall(_G.require,'lfs')
-if not res then
-    error("pl.path requires LuaFileSystem")
-end
 
-local attrib = lfs.attributes
-local currentdir = lfs.currentdir
-local link_attrib = lfs.symlinkattributes
+local uv = require("uv")
+
+-- We probably don't need these, so I haven't bothered fixing all the redirects yet
+local currentdir = uv.cwd
+local attrib = function() error("lfs.attributes redirect NYI\n" .. debug.traceback()) end
+local link_attrib = function() error("lfs.symlinkattributes redirect NYI\n" .. debug.traceback()) end
 
 local path = {}
 
@@ -53,7 +53,7 @@ path.dir = lfs.dir
 -- Implicit link to [`luafilesystem.mkdir`](https://keplerproject.github.io/luafilesystem/manual.html#reference)
 -- @function mkdir
 path.mkdir = function(d)
-  local ok, err, code = lfs.mkdir(d)
+  local ok, err, code = C_FileSystem.CreateDirectory(d)
   if not ok then
     return ok, err_func("mkdir", d, err, code), code
   end
@@ -120,18 +120,14 @@ end
 --- is this a directory?
 -- @string P A file path
 function path.isdir(P)
-    assert_string(1,P)
-    if P:match("\\$") then
-        P = P:sub(1,-2)
-    end
-    return attrib(P,'mode') == 'directory'
+	return C_FileSystem.IsDirectory(P)
 end
 
 --- is this a file?
 -- @string P A file path
 function path.isfile(P)
     assert_string(1,P)
-    return attrib(P,'mode') == 'file'
+	return C_FileSystem.IsFile(P)
 end
 
 -- is this a symbolic link?
@@ -156,8 +152,7 @@ end
 -- @string P A file path
 -- @return the file path if it exists (either as file, directory, socket, etc), nil otherwise
 function path.exists(P)
-    assert_string(1,P)
-    return attrib(P,'mode') ~= nil and P
+	return C_FileSystem.Exists(P)
 end
 
 --- Return the time of last access as the number of seconds since the epoch.
@@ -170,8 +165,7 @@ end
 --- Return the time of last modification as the number of seconds since the epoch.
 -- @string P A file path
 function path.getmtime(P)
-    assert_string(1,P)
-    return attrib(P,'modification')
+	return uv.fs_stat(P).mtime.sec -- Use sync version here because LFS was also blocking
 end
 
 ---Return the system's ctime as the number of seconds since the epoch.

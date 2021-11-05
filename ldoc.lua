@@ -83,7 +83,6 @@ ldoc, a documentation generator for Lua, v]]..version..[[
   and processes <file> if 'file' was not defined in the ld file.
 ]]
 local args = lapp(usage)
-local lfs = require 'lfs'
 local doc = require 'ldoc.doc'
 local lang = require 'ldoc.lang'
 local tools = require 'ldoc.tools'
@@ -306,8 +305,9 @@ local file_list = List()
 File.list = file_list
 local config_dir
 
+local uv = require("uv")
 
-local ldoc_dir = arg[0]:gsub('[^/\\]+$','')
+local ldoc_dir = uv.cwd()
 local doc_path = ldoc_dir..'/ldoc/builtin/?.lua'
 
 -- ldoc -m is expecting a Lua package; this converts this to a file path
@@ -335,11 +335,11 @@ if args.file == '.' then
    local config_path = path.dirname(args.config)
    if config_path ~= '' then
       print('changing to directory',config_path)
-      lfs.chdir(config_path)
+	  uv.chdir(config_path)
    end
    args.file = ldoc.file or '.'
    if args.file == '.' then
-      args.file = lfs.currentdir()
+      args.file = uv.cwd()
    elseif type(args.file) == 'table' then
       for i,f in ipairs(args.file) do
          args.file[i] = abspath(f)
@@ -792,7 +792,7 @@ if builtin_style or builtin_template then
    local user = path.expanduser('~'):gsub('[/\\: ]','_')
    local tmpdir = path.join(path.is_windows and os.getenv('TMP') or (os.getenv('TMPDIR') or '/tmp'),'ldoc'..user)
    if not path.isdir(tmpdir) then
-      lfs.mkdir(tmpdir)
+	uv.fs_mkdir(tmpdir, 511) -- lfs.mkdir(tmpdir) -- We can safely use the blocking version here since lfs is also synchronous
    end
    local function tmpwrite (name)
       local ok,text = pcall(require,'ldoc.html.'..name:gsub('%.','_'))
