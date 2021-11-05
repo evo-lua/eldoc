@@ -1,0 +1,3 @@
+#!/bin/sh
+unset LUA_PATH LUA_PATH_5_2 LUA_PATH_5_3 LUA_PATH_5_4 LUA_CPATH LUA_CPATH_5_2 LUA_CPATH_5_3 LUA_CPATH_5_4
+LUAROCKS_SYSCONFDIR="/usr/local/etc/luarocks" LUA_PATH="/mnt/e/GitHub/EvoLua/eldoc/luarocks/luarocks-3.7.0/src/?.lua;;" exec "/usr/bin/lua5.4" "/mnt/e/GitHub/EvoLua/eldoc/luarocks/luarocks-3.7.0/src/bin/luarocks-admin" --project-tree="/mnt/e/GitHub/EvoLua/eldoc/luarocks/luarocks-3.7.0/lua_modules" "$@"
