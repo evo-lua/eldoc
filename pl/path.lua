@@ -21,8 +21,9 @@ local append, concat, remove = table.insert, table.concat, table.remove
 local utils = require 'pl.utils'
 local assert_string,raise = utils.assert_string,utils.raise
 
-local res,lfs = _G.pcall(_G.require,'lfs')
+local _,lfs = _G.pcall(_G.require,'lfs')
 
+local C_FileSystem = _G.C_FileSystem
 local uv = require("uv")
 
 -- We probably don't need these, so I haven't bothered fixing all the redirects yet
