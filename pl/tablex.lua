@@ -4,8 +4,8 @@
 --
 -- Dependencies: `pl.utils`, `pl.types`
 -- @module pl.tablex
-local utils = import ('pl/utils')
-local types = import ('pl/types')
+local utils = import ('utils')
+local types = import ('types')
 local getmetatable,setmetatable,import = getmetatable,setmetatable,import
 local tsort,append,remove = table.sort,table.insert,table.remove
 local min = math.min
@@ -19,16 +19,16 @@ local tablex = {}
 -- However, when the source has no obvious type, then we attach appropriate metatables
 -- like List, Map, etc to the result.
 local function setmeta (res,tbl,pl_class)
-    local mt = getmetatable(tbl) or pl_class and import('pl/' .. pl_class)
+    local mt = getmetatable(tbl) or pl_class and import('' .. pl_class)
     return mt and setmetatable(res, mt) or res
 end
 
 local function makelist(l)
-    return setmetatable(l, import('pl/List'))
+    return setmetatable(l, import('List'))
 end
 
 local function makemap(m)
-    return setmetatable(m, import('pl/Map'))
+    return setmetatable(m, import('Map'))
 end
 
 local function complain (idx,msg)
@@ -611,13 +611,15 @@ end
 
 local function set_op(i,v) return true,v end
 
+local Set = import('Set')
+
 --- create a set from a list-like table. A set is a table where the original values
 -- become keys, and the associated values are all true.
 -- @array t a list-like table
 -- @return a set (a map-like table)
 function tablex.makeset (t)
     assert_arg_indexable(1,t)
-    return setmetatable(tablex.pairmap(set_op,t),import('pl/Set'))
+    return setmetatable(tablex.pairmap(set_op,t), Set)
 end
 
 --- combine two tables, either as union or intersection. Corresponds to

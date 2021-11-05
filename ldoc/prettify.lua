@@ -5,9 +5,9 @@
 -- `@{example:test-fun}`.
 
 local import = _G.import
-local List = import 'pl/List'
-local tablex = import 'pl/tablex'
-local globals = import 'ldoc/builtin/globals'
+local List = import '../pl/List'
+local tablex = import '../pl/tablex'
+local globals = import 'builtin/globals'
 local prettify = {}
 
 local user_keywords = {}
@@ -32,7 +32,7 @@ local spans = {keyword=true,number=true,string=true,comment=true,global=true,bac
 local cpp_lang = {C = true, c = true, cpp = true, cxx = true, h = true}
 
 function prettify.lua (lang, fname, code, initial_lineno, pre, linenos)
-   local res, lexer = List(), import 'ldoc/lexer'
+   local res, lexer = List(), import 'lexer'
    local tokenizer
    local ik = 1
    if not cpp_lang[lang] then

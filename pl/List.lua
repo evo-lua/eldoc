@@ -20,11 +20,11 @@
 
 local tinsert,tremove,concat,tsort = table.insert,table.remove,table.concat,table.sort
 local setmetatable, getmetatable,type,tostring,string = setmetatable,getmetatable,type,tostring,string
-local tablex = import 'pl/tablex'
+local tablex = import 'tablex'
 local filter,imap,imap2,reduce,transform,tremovevalues = tablex.filter,tablex.imap,tablex.imap2,tablex.reduce,tablex.transform,tablex.removevalues
 local tsub = tablex.sub
-local utils = import 'pl/utils'
-local class = import 'pl/class'
+local utils = import 'utils'
+local class = import 'class'
 
 local array_tostring,split,assert_arg,function_arg = utils.array_tostring,utils.split,utils.assert_arg,utils.function_arg
 local normalize_slice = tablex._normalize_slice

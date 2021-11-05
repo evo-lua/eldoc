@@ -3,10 +3,10 @@
 -- Dependencies: `pl.utils`, `pl.class`, `pl.List`, `pl.Map`
 -- @classmod pl.MultiMap
 
-local utils = import 'pl/utils'
-local class = import 'pl/class'
-local List = import 'pl/List'
-local Map = import 'pl/Map'
+local utils = import 'utils'
+local class = import 'class'
+local List = import 'List'
+local Map = import 'Map'
 
 -- MultiMap is a standard MT
 local MultiMap = utils.stdmt.MultiMap

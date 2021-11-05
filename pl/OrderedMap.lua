@@ -5,13 +5,13 @@
 -- Dependencies: `pl.utils`, `pl.tablex`, `pl.class`, `pl.List`, `pl.Map`
 -- @classmod pl.OrderedMap
 
-local tablex = import 'pl/tablex'
-local utils = import 'pl/utils'
-local List = import 'pl/List'
+local tablex = import 'tablex'
+local utils = import 'utils'
+local List = import 'List'
 local index_by,tsort,concat = tablex.index_by,table.sort,table.concat
 
-local class = import 'pl/class'
-local Map = import 'pl/Map'
+local class = import 'class'
+local Map = import 'Map'
 
 local OrderedMap = class(Map)
 OrderedMap._name = 'OrderedMap'

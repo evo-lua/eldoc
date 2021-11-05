@@ -9,7 +9,7 @@
 -- Calling `text.format_operator()` overloads the % operator for strings to give Python/Ruby style formated output.
 -- This is extended to also do template-like substitution for map-like data.
 --
---    > import 'pl/text'.format_operator()
+--    > import 'text'.format_operator()
 --    > = '%s = %5.3f' % {'PI',math.pi}
 --    PI = 3.142
 --    > = '$name = $value' % {name='dog',value='Pluto'}
@@ -20,16 +20,16 @@
 
 local gsub = string.gsub
 local concat,append = table.concat,table.insert
-local utils = import 'pl/utils'
+local utils = import 'utils'
 local bind1,usplit,assert_arg = utils.bind1,utils.split,utils.assert_arg
-local is_callable = import 'pl/types'.is_callable
+local is_callable = import 'types'.is_callable
 local unpack = utils.unpack
 
 local text = {}
 
 
 local function makelist(l)
-    return setmetatable(l, _G.import('pl/List'))
+    return setmetatable(l, _G.import('List'))
 end
 
 local function lstrip(str)  return (str:gsub('^%s+',''))  end

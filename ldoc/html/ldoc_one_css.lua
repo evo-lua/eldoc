@@ -1,5 +1,5 @@
 local import = _G.import
-return import('ldoc/html/_reset_css') .. [[
+return import('_reset_css') .. [[
 
 body {
     margin-left: 1em;
@@ -200,4 +200,4 @@ dl.table dd, dl.function dd {padding-bottom: 1em; margin: 10px 0 0 20px;}
 dl.table h3, dl.function h3 {font-size: .95em;}
 
 ]]
-.. import('ldoc/html/_code_css')
+.. import('_code_css')

@@ -28,7 +28,7 @@
 -- Dependencies: `pl.utils`
 -- @module pl.template
 
-local utils = import 'pl/utils'
+local utils = import 'utils'
 
 local append,format,strsub,strfind,strgsub = table.insert,string.format,string.sub,string.find,string.gsub
 

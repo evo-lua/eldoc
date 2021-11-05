@@ -2,13 +2,13 @@
 
 local import = _G.import
 
-local utils = import 'pl/utils'
-local List = import 'pl/List'
--- local Map = import 'pl/Map'
-local stringio = import 'pl/stringio'
-local lexer = import 'ldoc/lexer'
-local tools = import 'ldoc/tools'
-local doc = import 'ldoc/doc'
+local utils = import '../pl/utils'
+local List = import '../pl/List'
+-- local Map = import '../pl/Map'
+local stringio = import '../pl/stringio'
+local lexer = import 'lexer'
+local tools = import 'tools'
+local doc = import 'doc'
 local Item,File = doc.Item,doc.File
 local unpack = utils.unpack
 

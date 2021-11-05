@@ -15,17 +15,17 @@
 
 local import = _G.import
 
-local List = import 'pl/List'
-local utils = import 'pl/utils'
-local path = import 'pl/path'
-local stringx = import 'pl/stringx'
-local template = import 'pl/template'
-local tablex = import 'pl/tablex'
-local OrderedMap = import 'pl/OrderedMap'
-local tools = import 'ldoc/tools'
-local markup = import 'ldoc/markup'
-local prettify = import 'ldoc/prettify'
-local doc = import 'ldoc/doc'
+local List = import '../pl/List'
+local utils = import '../pl/utils'
+local path = import '../pl/path'
+local stringx = import '../pl/stringx'
+local template = import '../pl/template'
+local tablex = import '../pl/tablex'
+local OrderedMap = import '../pl/OrderedMap'
+local tools = import 'tools'
+local markup = import 'markup'
+local prettify = import 'prettify'
+local doc = import 'doc'
 local unpack = utils.unpack
 local html = {}
 
@@ -333,7 +333,7 @@ function ldoc.source_ref (fun)
           lfs.mkdir(dir_data)
           -- luacheck: pop
       end
-      local file = import 'pl/file'
+      local file = import '../pl/file'
       file.copy(ldoc.icon, dir_data)
    end
 

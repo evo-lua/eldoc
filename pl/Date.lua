@@ -8,10 +8,10 @@
 -- @classmod pl.Date
 -- @pragma nostrip
 
-local class = import 'pl/class'
+local class = import 'class'
 local os_time, os_date = os.time, os.date
-local stringx = import 'pl/stringx'
-local utils = import 'pl/utils'
+local stringx = import 'stringx'
+local utils = import 'utils'
 local assert_arg,assert_string = utils.assert_arg,utils.assert_string
 
 

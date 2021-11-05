@@ -5,11 +5,11 @@
 
 local import = _G.import
 
-local class = import 'pl/class'
-local utils = import 'pl/utils'
-local List =  import 'pl/List'
-local tools = import 'ldoc/tools'
-local lexer = import 'ldoc/lexer'
+local class = import '../pl/class'
+local utils = import '../pl/utils'
+local List =  import '../pl/List'
+local tools = import 'tools'
+local lexer = import 'lexer'
 local quit = utils.quit
 local tnext = lexer.skipws
 

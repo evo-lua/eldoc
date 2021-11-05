@@ -9,8 +9,8 @@ local strfind,format = string.find,string.format
 local mrandom = math.random
 local tsort,tappend = table.sort,table.insert
 local io = io
-local utils = import 'pl/utils'
-local callable = import 'pl/types'.is_callable
+local utils = import 'utils'
+local callable = import 'types'.is_callable
 local function_arg = utils.function_arg
 local assert_arg = utils.assert_arg
 local debug = import 'debug'
@@ -158,7 +158,7 @@ function seq.copy(iter)
         res[k] = v
         k = k + 1
     end
-    setmetatable(res, import('pl/List'))
+    setmetatable(res, import('List'))
     return res
 end
 
@@ -253,7 +253,7 @@ function seq.count_map(iter)
         if v then t[s] = v + 1
         else t[s] = 1 end
     end
-    return setmetatable(t, import('pl/Map'))
+    return setmetatable(t, import('Map'))
 end
 
 -- given a sequence, return all the unique values in that sequence.

@@ -11,10 +11,10 @@ local append = table.insert
 local concat = table.concat
 local mfloor, mhuge = math.floor, math.huge
 local mtype = math.type
-local utils = import 'pl/utils'
-local lexer = import 'pl/lexer'
+local utils = import 'utils'
+local lexer = import 'lexer'
 local debug = _G.debug
-local quote_string = import'pl/string/'.quote_string
+local quote_string = import'stringx'.quote_string
 local assert_arg = utils.assert_arg
 
 local original_tostring = tostring

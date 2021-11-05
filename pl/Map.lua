@@ -1,6 +1,6 @@
 --- A Map class.
 --
---    > Map = import 'pl/Map'
+--    > Map = import 'Map'
 --    > m = Map{one=1,two=2}
 --    > m:update {three=3,four=4,two=20}
 --    > = m == M{one=1,two=20,three=3,four=4}
@@ -9,16 +9,16 @@
 -- Dependencies: `pl.utils`, `pl.class`, `pl.tablex`, `pl.pretty`
 -- @classmod pl.Map
 
-local tablex = import 'pl/tablex'
-local utils = import 'pl/utils'
+local tablex = import 'tablex'
+local utils = import 'utils'
 local stdmt = utils.stdmt
 local deepcompare = tablex.deepcompare
 
-local pretty_write = import 'pl/pretty' . write
+local pretty_write = import 'pretty' . write
 local Map = stdmt.Map
 local Set = stdmt.Set
 
-local class = import 'pl/class'
+local class = import 'class'
 
 -- the Map class ---------------------
 class(nil,nil,Map)
@@ -34,7 +34,7 @@ end
 
 
 local function makelist(t)
-    return setmetatable(t, _G.import('pl/List'))
+    return setmetatable(t, _G.import('List'))
 end
 
 --- list of keys.

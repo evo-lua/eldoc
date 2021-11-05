@@ -1,7 +1,7 @@
 --- Simple command-line parsing using human-readable specification.
 -- Supports GNU-style parameters.
 --
---      lapp = import 'pl/lapp'
+--      lapp = import 'lapp'
 --      local args = lapp [[
 --      Does some calculations
 --        -o,--offset (default 0.0)  Offset to add to scaled number
@@ -20,7 +20,7 @@
 -- Dependencies: `pl.sip`
 -- @module pl.lapp
 
-local status,sip = pcall(import,'pl/sip')
+local status,sip = pcall(import,'sip')
 if not status then
     sip = import 'sip'
 end

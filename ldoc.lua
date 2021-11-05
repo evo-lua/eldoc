@@ -17,6 +17,8 @@
 -- @script ldoc
 local import = _G.import
 
+_G.ENABLE_IMPORT_DEBUGGING = true
+
 local class = import 'pl/class'
 local app = import 'pl/app'
 local path = import 'pl/path'
@@ -87,7 +89,7 @@ local args = lapp(usage)
 local doc = import 'ldoc/doc'
 local lang = import 'ldoc/lang'
 local tools = import 'ldoc/tools'
-local global = import 'ldoc/builtin.globals'
+local global = import 'ldoc/builtin/globals'
 local markup = import 'ldoc/markup'
 local parse = import 'ldoc/parse'
 local KindMap = tools.KindMap

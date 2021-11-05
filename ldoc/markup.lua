@@ -5,10 +5,10 @@
 
 local import = _G.import
 
-local doc = import 'ldoc/doc'
-local utils = import 'pl/utils'
-local stringx = import 'pl/stringx'
-local prettify = import 'ldoc/prettify'
+local doc = import 'doc'
+local utils = import '../pl/utils'
+local stringx = import '../pl/stringx'
+local prettify = import 'prettify'
 local concat = table.concat
 local markup = {}
 
@@ -232,7 +232,7 @@ local formatters =
       local ok, markdown = pcall(import, 'markdown')
       if not ok then
          print('format: using built-in markdown')
-         ok, markdown = pcall(import, 'ldoc/markdown')
+         ok, markdown = pcall(import, 'markdown')
       end
       return ok and markdown
    end,
@@ -267,7 +267,7 @@ local formatters =
       end
       if not ok then
          print('format: using built-in markdown')
-         ok, markdown = pcall(import, 'ldoc/markdown')
+         ok, markdown = pcall(import, 'markdown')
       end
       return ok and markdown
    end,

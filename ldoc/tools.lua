@@ -4,17 +4,17 @@
 
 local import = _G.import
 
-local class = import 'pl/class'
-local List = import 'pl/List'
-local path = import 'pl/path'
-local utils = import 'pl/utils'
-local tablex = import 'pl/tablex'
-local stringx = import 'pl/stringx'
-local dir = import 'pl/dir'
+local class = import '../pl/class'
+local List = import '../pl/List'
+local path = import '../pl/path'
+local utils = import '../pl/utils'
+local tablex = import '../pl/tablex'
+local stringx = import '../pl/stringx'
+local dir = import '../pl/dir'
 local tools = {}
 local M = tools
 local append = table.insert
-local lexer = import 'ldoc/lexer'
+local lexer = import 'lexer'
 local quit = utils.quit
 
 -- at rendering time, can access the ldoc table from any module item,

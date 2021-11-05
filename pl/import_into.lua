@@ -32,11 +32,11 @@ return function(env)
         List = true, Map = true, Set = true,
         OrderedMap = true, MultiMap = true, Date = true,
     }
-    rawset(env,'utils',import 'pl/utils')
+    rawset(env,'utils',import 'utils')
 
     for name,klass in pairs(env.utils.stdmt) do
         klass.__index = function(t,key)
-            return import ('pl/'..name)[key]
+            return import (''..name)[key]
         end;
     end
 
@@ -64,7 +64,7 @@ return function(env)
         -- either way, we load the required module and make it globally available.
         if found then
             -- e..g pretty.dump causes pl.pretty to become available as 'pretty'
-            rawset(env,name, _G.import('pl/'..name))
+            rawset(env,name, _G.import(''..name))
             return env[name]
         else
             local res

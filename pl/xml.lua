@@ -29,7 +29,7 @@
 -- Soft Dependencies: `lxp.lom` (fallback is to use basic Lua parser)
 -- @module pl.xml
 
-local utils = import 'pl/utils'
+local utils = import 'utils'
 local split         =   utils.split;
 local t_insert      =  table.insert;
 local t_concat      =  table.concat;

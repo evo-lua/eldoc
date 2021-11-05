@@ -2,15 +2,15 @@
 -- Defining the ldoc document model.
 local import = _G.import
 
-local class = import 'pl/class'
-local utils = import 'pl/utils'
-local List = import 'pl/List'
-local Map = import 'pl/Map'
-local text = import 'pl/text'
+local class = import '../pl/class'
+local utils = import '../pl/utils'
+local List = import '../pl/List'
+local Map = import '../pl/Map'
+local text = import '../pl/text'
 
 local doc = {}
-local global = import 'ldoc/builtin/globals'
-local tools = import 'ldoc/tools'
+local global = import 'builtin/globals'
+local tools = import 'tools'
 local split_dotted_name = tools.split_dotted_name
 
 local TAG_MULTI,TAG_ID,TAG_SINGLE,TAG_TYPE,TAG_FLAG,TAG_MULTI_LINE = 'M','id','S','T','N','ML'
@@ -405,7 +405,7 @@ function File:finish()
          end
       end
       -- luacheck: pop
-      item.names_hierarchy = import('pl/utils').split(
+      item.names_hierarchy = import('../pl/utils').split(
         item.name,
         '[.:]'
       )
@@ -932,7 +932,7 @@ function Item:build_return_groups()
          groups:append(group)
          lastg = g
       end
-      --import 'pl/pretty'.dump(ret)
+      --import '../pl/pretty'.dump(ret)
       if not mods then
          self:error(quote(self.name)..' had no return?')
       end
@@ -1022,7 +1022,7 @@ end
 
 function Item:warning(msg)
    local file = self.file and self.file.filename
-   if type(file) == 'table' then import 'pl/pretty'.dump(file); file = '?' end
+   if type(file) == 'table' then import '../pl/pretty'.dump(file); file = '?' end
    file = file or '?'
    io.stderr:write(file,':',self.lineno or '1',': ',self.name or '?',': ',msg,'\n')
    Item.had_warning = true
@@ -1321,7 +1321,7 @@ end
 
 function doc.filter_objects_through_function(filter, module_list)
    local quit, quote = utils.quit, tools.quote
-   if filter == 'dump' then filter = 'pl.pretty.dump' end
+   if filter == 'dump' then filter = '../pl/pretty/dump' end
    local mod,name = tools.split_dotted_name(filter)
    local ok,P = pcall(import,mod)
    if not ok then quit("cannot find module "..quote(mod)) end

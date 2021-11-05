@@ -20,9 +20,9 @@
 local type,setmetatable,getmetatable,rawset = type,setmetatable,getmetatable,rawset
 local concat,append = table.concat,table.insert
 local tostring = tostring
-local utils = import 'pl/utils'
+local utils = import 'utils'
 local pairs,rawget,unpack,pack = pairs,rawget,utils.unpack,utils.pack
-local tablex = import 'pl/tablex'
+local tablex = import 'tablex'
 local map = tablex.map
 local _DEBUG = rawget(_G,'_DEBUG')
 local assert_arg = utils.assert_arg

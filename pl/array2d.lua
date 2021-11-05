@@ -14,9 +14,9 @@ local tonumber,tostring,io,ipairs,string,table =
     _G.tonumber,_G.tostring,_G.io,_G.ipairs,_G.string,_G.table
 local setmetatable,getmetatable = setmetatable,getmetatable
 
-local tablex = import 'pl/tablex'
-local utils = import 'pl/utils'
-local types = import 'pl/types'
+local tablex = import 'tablex'
+local utils = import 'utils'
+local types = import 'types'
 local imap,tmap,reduce,keys,tmap2,tset,index_by = tablex.imap,tablex.map,tablex.reduce,tablex.keys,tablex.map2,tablex.set,tablex.index_by
 local remove = table.remove
 local splitv,fprintf,assert_arg = utils.splitv,utils.fprintf,utils.assert_arg
@@ -36,7 +36,7 @@ local function obj (int,out)
 end
 
 local function makelist (res)
-    return setmetatable(res, _G.import('pl/List'))
+    return setmetatable(res, _G.import('List'))
 end
 
 --- return the row and column size.

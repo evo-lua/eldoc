@@ -1,5 +1,5 @@
 local import = _G.import
-return import('ldoc/html/_reset_css') .. [[
+return import('_reset_css') .. [[
 
 body {
     margin-left: 1em;
@@ -223,4 +223,4 @@ a:target + * {
 }
 
 ]]
-.. import('ldoc/html/_code_css')
+.. import('_code_css')

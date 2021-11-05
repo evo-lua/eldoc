@@ -5,8 +5,9 @@
 -- @module pl.app
 
 local io,package,import = _G.io, _G.package, _G.import
-local utils = import 'pl/utils'
-local path = import 'pl/path'
+local utils = import 'utils'
+local path = import 'path'
+
 
 local app = {}
 
@@ -62,7 +63,7 @@ end
 -- @return cannot create directory error
 -- @usage
 -- -- when run from a script called 'testapp' (on Windows):
--- local app = import 'pl/app'
+-- local app = import 'app'
 -- print(app.appfile 'test.txt')
 -- -- C:\Documents and Settings\steve\.testapp\test.txt
 function app.appfile(file)
@@ -170,6 +171,7 @@ end
 --     [1] = "param1"
 --     [2] = "param2"
 -- }
+
 function app.parse_args (args,flags_with_values, flags_valid)
     if not args then
         args = _G.arg

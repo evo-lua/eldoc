@@ -8,10 +8,10 @@
 -- Dependencies: `pl.utils`, `pl.tablex`, `pl.pretty`, `pl.path`, `debug`
 -- @module pl.test
 
-local tablex = import 'pl/tablex'
-local utils = import 'pl/utils'
-local pretty = import 'pl/pretty'
-local path = import 'pl/path'
+local tablex = import 'tablex'
+local utils = import 'utils'
+local pretty = import 'pretty'
+local path = import 'path'
 local type,unpack,pack = type,utils.unpack,utils.pack
 local clock = os.clock
 local debug = import 'debug'

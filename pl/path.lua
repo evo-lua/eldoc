@@ -18,10 +18,10 @@ local getenv = os.getenv
 local tmpnam = os.tmpname
 local package = package
 local append, concat, remove = table.insert, table.concat, table.remove
-local utils = _G.import 'pl/utils'
+local utils = _G.import 'utils'
 local assert_string,raise = utils.assert_string,utils.raise
+local _,lfs = _G.pcall(_G.import,'../ldoc/builtin/lfs')
 
-local _,lfs = _G.pcall(_G.import,'lfs')
 
 local C_FileSystem = _G.C_FileSystem
 local uv = require("uv")
@@ -564,7 +564,6 @@ function path.package_path(mod)
     if res then return res,false end
     return raise ('cannot find module on path\n' .. err1 .. "\n" .. err2)
 end
-
 
 ---- finis -----
 return path

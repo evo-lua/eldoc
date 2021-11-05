@@ -2,7 +2,7 @@
 --
 -- See the [wiki page](http://lua-users.org/wiki/ListComprehensions)
 --
---    local C= import 'pl/comprehension' . new()
+--    local C= import 'comprehension' . new()
 --
 --    C ('x for x=1,10') ()
 --    ==> {1,2,3,4,5,6,7,8,9,10}
@@ -30,9 +30,9 @@
 -- See @{07-functional.md.List_Comprehensions|the Guide}
 -- @module pl.comprehension
 
-local utils = import 'pl/utils'
+local utils = import 'utils'
 
-local status,lb = pcall(import, "pl/luabalanced")
+local status,lb = pcall(import, "luabalanced")
 if not status then
     lb = import 'luabalanced'
 end
