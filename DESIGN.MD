@@ -96,3 +96,25 @@ TODO: Add details about the output formats
 This is an exhaustive list of all the tags that EvoDoc currently supports:
 
 TODO Add list of all supported tags
+
+## How it works
+
+eldoc generates its output in phases, each handled independently of the others:
+
+1. Abstract Syntax Tree Generation
+2. Extracting relevant doc comments
+3. Transforming doc comments into the final output
+
+Read on for more details on the individual phases
+
+### Phase 1: AST Generation
+
+This is mostly handled by [luaparse](https://fstirlitz.github.io/luaparse/), which will take a given Lua script as input and output a JSON represenation of an abstract syntax tree for the given program.
+
+### Phase 2: DocComment Extraction
+
+While generating the AST, luaparse will emit certain events that eldoc uses to determine when a relevant DocComment has been encountered. It will then associate them with the function definition that immediately follows it, and store the result alongside the respective namespace in a simplified JSON representation.
+
+### Phase 3: HTML/Markdown/etc Rendering
+
+This intermediate representation can be transformed into the desired output format, such as a set of markdown files or a website styled with CSS. Plain JSON dumps are also possible, though they're mostly useful for debugging (or if you want to employ other tools later).
