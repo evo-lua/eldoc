@@ -5,14 +5,20 @@ local FILE_DESCRIPTOR_TYPE_FILE = "file"
 
 local C_FileSystem = {}
 
+--- TODO
+-- @param path
 function C_FileSystem.CreateDirectory(path)
 	return fs.mkdirp(path)
 end
 
+--- TODO
+-- @param path
 function C_FileSystem.Exists(path)
 	return fs.access(path, "R")
 end
 
+--- TODO
+-- @param path
 function C_FileSystem.IsFile(path)
 	local fileAttributes = fs.stat(path)
 	if not fileAttributes then return false end
@@ -20,6 +26,8 @@ function C_FileSystem.IsFile(path)
 	return fileAttributes.type == FILE_DESCRIPTOR_TYPE_FILE
 end
 
+--- TODO
+-- @param path
 function C_FileSystem.IsDirectory(path)
 	local fileAttributes = fs.stat(path)
 	if not fileAttributes then return false end
@@ -27,6 +35,8 @@ function C_FileSystem.IsDirectory(path)
 	return fileAttributes.type == FILE_DESCRIPTOR_TYPE_DIRECTORY
 end
 
+--- TODO
+-- @param path
 function C_FileSystem.Delete(path)
 	if not C_FileSystem.Exists(path) then return false end
 
@@ -37,10 +47,14 @@ function C_FileSystem.Delete(path)
 	return fs.unlink(path)
 end
 
+-- Read from a file
+-- @param path
 function C_FileSystem.ReadFile(path)
 	return fs.readFile(path)
 end
 
+--- Scan a directory (duh)
+-- @param path
 function C_FileSystem.ScanDirectory(path)
 	local directoryIterator = fs.scandir(path)
 
@@ -59,6 +73,9 @@ function C_FileSystem.ScanDirectory(path)
 	return directoryContents
 end
 
+--- Write to a file
+-- @param path
+-- @param data
 function C_FileSystem.WriteFile(path, data)
 	-- Always make parent directories, as that's more convenient
 	return fs.writeFile(path, data, true)

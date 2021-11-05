@@ -482,11 +482,28 @@
         }
     ],
     "comments": [
+        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": " Read from a file", "raw": "-- Read from a file" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": "- Scan a directory (duh)", "raw": "--- Scan a directory (duh)" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
         {
             "type": "Comment",
             "value": " Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly",
             "raw": "-- Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly"
         },
+        { "type": "Comment", "value": "- Write to a file", "raw": "--- Write to a file" },
+        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        { "type": "Comment", "value": " @param data", "raw": "-- @param data" },
         {
             "type": "Comment",
             "value": " Always make parent directories, as that's more convenient",
