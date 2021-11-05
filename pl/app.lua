@@ -4,9 +4,9 @@
 -- Dependencies: `pl.utils`, `pl.path`
 -- @module pl.app
 
-local io,package,require = _G.io, _G.package, _G.require
-local utils = require 'pl.utils'
-local path = require 'pl.path'
+local io,package,import = _G/io, _G.package, _G.import
+local utils = import 'pl/utils'
+local path = import 'pl/path'
 
 local app = {}
 
@@ -62,7 +62,7 @@ end
 -- @return cannot create directory error
 -- @usage
 -- -- when run from a script called 'testapp' (on Windows):
--- local app = require 'pl.app'
+-- local app = import 'pl/app'
 -- print(app.appfile 'test.txt')
 -- -- C:\Documents and Settings\steve\.testapp\test.txt
 function app.appfile(file)

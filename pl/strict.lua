@@ -13,7 +13,7 @@
 --
 -- @module pl.strict
 
-require 'debug' -- for Lua 5.2
+import 'debug' -- for Lua 5/2
 local getinfo, error, rawset, rawget = debug.getinfo, error, rawset, rawget
 local strict = {}
 

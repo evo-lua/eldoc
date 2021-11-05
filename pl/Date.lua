@@ -8,10 +8,10 @@
 -- @classmod pl.Date
 -- @pragma nostrip
 
-local class = require 'pl.class'
+local class = import 'pl/class'
 local os_time, os_date = os.time, os.date
-local stringx = require 'pl.stringx'
-local utils = require 'pl.utils'
+local stringx = import 'pl/stringx'
+local utils = import 'pl/utils'
 local assert_arg,assert_string = utils.assert_arg,utils.assert_string
 
 
@@ -672,4 +672,3 @@ function parse_date (s)
 end
 
 return Date
-

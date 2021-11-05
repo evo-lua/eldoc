@@ -3,10 +3,12 @@
 -- Currently just does Markdown, but this is intended to
 -- be the general module for managing other formats as well.
 
-local doc = require 'ldoc.doc'
-local utils = require 'pl.utils'
-local stringx = require 'pl.stringx'
-local prettify = require 'ldoc.prettify'
+local import = _G.import
+
+local doc = import 'ldoc/doc'
+local utils = import 'pl/utils'
+local stringx = import 'pl/stringx'
+local prettify = import 'ldoc/prettify'
 local concat = table.concat
 local markup = {}
 
@@ -219,7 +221,7 @@ end
 -- try all the others we know about.  If they don't work, fall back to text.
 
 local function generic_formatter(format)
-   local ok, f = pcall(require, format)
+   local ok, f = pcall(import, format)
    return ok and f
 end
 
@@ -227,15 +229,15 @@ end
 local formatters =
 {
    markdown = function(format)
-      local ok, markdown = pcall(require, 'markdown')
+      local ok, markdown = pcall(import, 'markdown')
       if not ok then
          print('format: using built-in markdown')
-         ok, markdown = pcall(require, 'ldoc.markdown')
+         ok, markdown = pcall(import, 'ldoc/markdown')
       end
       return ok and markdown
    end,
    discount = function(format)
-      local ok, markdown = pcall(require, 'discount')
+      local ok, markdown = pcall(import, 'discount')
       if ok then
          -- luacheck: push ignore 542
          if 'function' == type(markdown) then
@@ -265,12 +267,12 @@ local formatters =
       end
       if not ok then
          print('format: using built-in markdown')
-         ok, markdown = pcall(require, 'ldoc.markdown')
+         ok, markdown = pcall(import, 'ldoc/markdown')
       end
       return ok and markdown
    end,
    lunamark = function(format)
-      local ok, lunamark = pcall(require, format)
+      local ok, lunamark = pcall(import, format)
       if ok then
          local writer = lunamark.writer.html.new()
          local parse = lunamark.reader.markdown.new(writer,
@@ -279,7 +281,7 @@ local formatters =
       end
    end,
    commonmark = function(format)
-     local ok, cmark = pcall(require, 'cmark')
+     local ok, cmark = pcall(import, 'cmark')
      if ok then
        return function(text)
          local doc = cmark.parse_document(text, string.len(text), cmark.OPT_DEFAULT)

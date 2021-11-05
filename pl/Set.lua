@@ -1,6 +1,6 @@
 --- A Set class.
 --
---     > Set = require 'pl.Set'
+--     > Set = import 'pl/Set'
 --     > = Set{'one','two'} == Set{'two','one'}
 --     true
 --     > fruit = Set{'apple','banana','orange'}
@@ -22,12 +22,12 @@
 -- Dependencies: `pl.utils`, `pl.tablex`, `pl.class`, `pl.Map`, (`pl.List` if __tostring is used)
 -- @classmod pl.Set
 
-local tablex = require 'pl.tablex'
-local utils = require 'pl.utils'
+local tablex = import 'pl/tablex'
+local utils = import 'pl/utils'
 local array_tostring, concat = utils.array_tostring, table.concat
 local merge,difference = tablex.merge,tablex.difference
-local Map = require 'pl.Map'
-local class = require 'pl.class'
+local Map = import 'pl/Map'
+local class = import 'pl/class'
 local stdmt = utils.stdmt
 local Set = stdmt.Set
 

@@ -4,9 +4,9 @@
 --
 -- Dependencies: `pl.utils`, `pl.types`
 -- @module pl.tablex
-local utils = require ('pl.utils')
-local types = require ('pl.types')
-local getmetatable,setmetatable,require = getmetatable,setmetatable,require
+local utils = import ('pl/utils')
+local types = import ('pl/types')
+local getmetatable,setmetatable,import = getmetatable,setmetatable,import
 local tsort,append,remove = table.sort,table.insert,table.remove
 local min = math.min
 local pairs,type,unpack,select,tostring = pairs,type,utils.unpack,select,tostring
@@ -19,16 +19,16 @@ local tablex = {}
 -- However, when the source has no obvious type, then we attach appropriate metatables
 -- like List, Map, etc to the result.
 local function setmeta (res,tbl,pl_class)
-    local mt = getmetatable(tbl) or pl_class and require('pl.' .. pl_class)
+    local mt = getmetatable(tbl) or pl_class and import('pl/' .. pl_class)
     return mt and setmetatable(res, mt) or res
 end
 
 local function makelist(l)
-    return setmetatable(l, require('pl.List'))
+    return setmetatable(l, import('pl/List'))
 end
 
 local function makemap(m)
-    return setmetatable(m, require('pl.Map'))
+    return setmetatable(m, import('pl/Map'))
 end
 
 local function complain (idx,msg)
@@ -617,7 +617,7 @@ local function set_op(i,v) return true,v end
 -- @return a set (a map-like table)
 function tablex.makeset (t)
     assert_arg_indexable(1,t)
-    return setmetatable(tablex.pairmap(set_op,t),require('pl.Set'))
+    return setmetatable(tablex.pairmap(set_op,t),import('pl/Set'))
 end
 
 --- combine two tables, either as union or intersection. Corresponds to

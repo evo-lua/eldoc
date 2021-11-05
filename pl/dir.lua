@@ -5,14 +5,14 @@
 -- Soft Dependencies: `alien`, `ffi` (either are used on Windows for copying/moving files)
 -- @module pl.dir
 
-local utils = require 'pl.utils'
-local path = require 'pl.path'
+local utils = import 'pl/utils'
+local path = import 'pl/path'
 local is_windows = path.is_windows
 local ldir = path.dir
 local mkdir = path.mkdir
 local rmdir = path.rmdir
 local sub = string.sub
-local os,pcall,ipairs,pairs,require,setmetatable = os,pcall,ipairs,pairs,require,setmetatable
+local os,pcall,ipairs,pairs,require,setmetatable = os,pcall,ipairs,pairs,_G.import,setmetatable
 local remove = os.remove
 local append = table.insert
 local assert_arg,assert_string,raise = utils.assert_arg,utils.assert_string,utils.raise
@@ -23,7 +23,7 @@ local sep = path.sep
 local dir = {}
 
 local function makelist(l)
-    return setmetatable(l, require('pl.List'))
+    return setmetatable(l, _G.import('pl/List'))
 end
 
 local function assert_dir (n,val)

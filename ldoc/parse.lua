@@ -1,12 +1,14 @@
 -- parsing code for doc comments
 
-local utils = require 'pl.utils'
-local List = require 'pl.List'
--- local Map = require 'pl.Map'
-local stringio = require 'pl.stringio'
-local lexer = require 'ldoc.lexer'
-local tools = require 'ldoc.tools'
-local doc = require 'ldoc.doc'
+local import = _G.import
+
+local utils = import 'pl/utils'
+local List = import 'pl/List'
+-- local Map = import 'pl/Map'
+local stringio = import 'pl/stringio'
+local lexer = import 'ldoc/lexer'
+local tools = import 'ldoc/tools'
+local doc = import 'ldoc/doc'
 local Item,File = doc.Item,doc.File
 local unpack = utils.unpack
 

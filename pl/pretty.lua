@@ -5,14 +5,16 @@
 -- Dependencies: `pl.utils`, `pl.lexer`, `pl.stringx`, `debug`
 -- @module pl.pretty
 
+local import = _G.import
+
 local append = table.insert
 local concat = table.concat
 local mfloor, mhuge = math.floor, math.huge
 local mtype = math.type
-local utils = require 'pl.utils'
-local lexer = require 'pl.lexer'
-local debug = require 'debug'
-local quote_string = require'pl.stringx'.quote_string
+local utils = import 'pl/utils'
+local lexer = import 'pl/lexer'
+local debug = import 'debug'
+local quote_string = import'pl/string/'.quote_string
 local assert_arg = utils.assert_arg
 
 local original_tostring = tostring

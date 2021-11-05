@@ -64,7 +64,7 @@ Any module or script must start with a doc comment; any other files are ignored 
 warning issued. The only exception is if the module starts with an explicit `module`
 statement.
 
-If your coding standards require a boilerplate copyright notice, then the `-B` flag or
+If your coding standards import a boilerplate copyright notice, then the `-B` flag o/
 `boilerplate=true` will make LDoc ignore the first comment of each module.
 
 Common commenting patterns like '---- (text) -----' are exempted, since they are often used
@@ -1402,5 +1402,3 @@ is also a map from these names to the individual descriptions of the parameters.
 `item.modifiers` is a table where the keys are the tags and the values are arrays of
 modifier tables.  The standard tag aliases `tparam` and `treturn` attach a `type` modifier
 to their tags.
-
-

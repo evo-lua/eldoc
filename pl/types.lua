@@ -3,7 +3,7 @@
 -- Dependencies `pl.utils`
 -- @module pl.types
 
-local utils = require 'pl.utils'
+local utils = import 'pl/utils'
 local math_ceil = math.ceil
 local assert_arg = utils.assert_arg
 local types = {}

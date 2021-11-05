@@ -2,8 +2,8 @@
 --
 -- Dependencies: `pl.utils`, `pl.tablex`
 -- @module pl.permute
-local tablex = require 'pl.tablex'
-local utils = require 'pl.utils'
+local tablex = import 'pl/tablex'
+local utils = import 'pl/utils'
 local copy = tablex.deepcopy
 local append = table.insert
 local assert_arg = utils.assert_arg

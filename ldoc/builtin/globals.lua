@@ -1,6 +1,6 @@
 -------
 -- global functions and tables
-local tools = require 'ldoc.tools'
+local tools = import 'ldoc/tools'
 local globals = {}
 local lua52 = _VERSION:match '5.2'
 local lua53 = _VERSION:match '5.3'
@@ -30,7 +30,7 @@ globals.functions = {
    type = true,
    xpcall = true,
    module = true,
-   require = true,
+   import = true,
 }
 local functions = globals.functions
 
@@ -128,7 +128,7 @@ local function function_ref (name,tbl)
       name = tbl..'.'..name
       href = fun_ref..name
    elseif xlibs[tbl] then -- in external libs, use LDoc style
-      local t = require('ldoc.builtin.'..tbl)
+      local t = import('ldoc/builtin/'..tbl)
       if not rawget(t,name) then
          return nil
       end

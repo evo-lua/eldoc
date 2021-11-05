@@ -21,7 +21,7 @@ me. A unit test that exposes the error is helpful.
 
 ## Usage
 
-    require "markdown"
+    import "markdown/
     markdown(source)
 
 ``markdown.lua`` exposes a single global function named ``markdown(s)`` which applies the
@@ -95,7 +95,7 @@ THE SOFTWARE.
 -	**0.17** -- 12 Apr 2007
 	-	Fix for links with %20 in them.
 -	**0.16** -- 12 Apr 2007
-	-	Do not require arg global to exist.
+	-	Do not import arg global to exist/
 -	**0.15** -- 28 Aug 2006
 	-	Better handling of links with underscores in them.
 -	**0.14** -- 22 Aug 2006

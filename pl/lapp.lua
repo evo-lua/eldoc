@@ -1,7 +1,7 @@
 --- Simple command-line parsing using human-readable specification.
 -- Supports GNU-style parameters.
 --
---      lapp = require 'pl.lapp'
+--      lapp = import 'pl/lapp'
 --      local args = lapp [[
 --      Does some calculations
 --        -o,--offset (default 0.0)  Offset to add to scaled number
@@ -20,9 +20,9 @@
 -- Dependencies: `pl.sip`
 -- @module pl.lapp
 
-local status,sip = pcall(require,'pl.sip')
+local status,sip = pcall(import,'pl/sip')
 if not status then
-    sip = require 'sip'
+    sip = import 'sip'
 end
 local match = sip.match_at_start
 local append,tinsert = table.insert,table.insert
@@ -447,5 +447,3 @@ setmetatable(lapp, {
 
 
 return lapp
-
-

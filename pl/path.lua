@@ -18,10 +18,10 @@ local getenv = os.getenv
 local tmpnam = os.tmpname
 local package = package
 local append, concat, remove = table.insert, table.concat, table.remove
-local utils = require 'pl.utils'
+local utils = _G.import 'pl/utils'
 local assert_string,raise = utils.assert_string,utils.raise
 
-local _,lfs = _G.pcall(_G.require,'lfs')
+local _,lfs = _G.pcall(_G.import,'lfs')
 
 local C_FileSystem = _G.C_FileSystem
 local uv = require("uv")

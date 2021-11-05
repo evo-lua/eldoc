@@ -11,7 +11,7 @@
 --    ports = 1002,1003,1004
 --
 --    -- readconfig.lua
---    local config = require 'config'
+--    local config = import 'config/
 --    local t = config.read 'test.config'
 --    print(pretty.write(t))
 --

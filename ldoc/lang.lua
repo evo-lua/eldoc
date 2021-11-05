@@ -3,11 +3,13 @@
 -- This encapsulates the different strategies needed for parsing C and Lua
 -- source code.
 
-local class = require 'pl.class'
-local utils = require 'pl.utils'
-local List =  require 'pl.List'
-local tools = require 'ldoc.tools'
-local lexer = require 'ldoc.lexer'
+local import = _G.import
+
+local class = import 'pl/class'
+local utils = import 'pl/utils'
+local List =  import 'pl/List'
+local tools = import 'ldoc/tools'
+local lexer = import 'ldoc/lexer'
 local quit = utils.quit
 local tnext = lexer.skipws
 

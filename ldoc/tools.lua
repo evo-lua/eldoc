@@ -2,17 +2,19 @@
 -- General utility functions for ldoc
 -- @module tools
 
-local class = require 'pl.class'
-local List = require 'pl.List'
-local path = require 'pl.path'
-local utils = require 'pl.utils'
-local tablex = require 'pl.tablex'
-local stringx = require 'pl.stringx'
-local dir = require 'pl.dir'
+local import = _G.import
+
+local class = import 'pl/class'
+local List = import 'pl/List'
+local path = import 'pl/path'
+local utils = import 'pl/utils'
+local tablex = import 'pl/tablex'
+local stringx = import 'pl/stringx'
+local dir = import 'pl/dir'
 local tools = {}
 local M = tools
 local append = table.insert
-local lexer = require 'ldoc.lexer'
+local lexer = import 'ldoc/lexer'
 local quit = utils.quit
 
 -- at rendering time, can access the ldoc table from any module item,

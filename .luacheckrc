@@ -19,3 +19,7 @@ exclude_files = {
   ".luarocks",
   ".install",
 }
+
+globals = {
+	"import"
+}

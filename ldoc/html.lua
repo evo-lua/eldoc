@@ -13,17 +13,19 @@
 -- generalizes the idea of these project-level categories and in fact custom categories
 -- can be created (refered to as 'kinds' in the code)
 
-local List = require 'pl.List'
-local utils = require 'pl.utils'
-local path = require 'pl.path'
-local stringx = require 'pl.stringx'
-local template = require 'pl.template'
-local tablex = require 'pl.tablex'
-local OrderedMap = require 'pl.OrderedMap'
-local tools = require 'ldoc.tools'
-local markup = require 'ldoc.markup'
-local prettify = require 'ldoc.prettify'
-local doc = require 'ldoc.doc'
+local import = _G.import
+
+local List = import 'pl/List'
+local utils = import 'pl/utils'
+local path = import 'pl/path'
+local stringx = import 'pl/stringx'
+local template = import 'pl/template'
+local tablex = import 'pl/tablex'
+local OrderedMap = import 'pl/OrderedMap'
+local tools = import 'ldoc/tools'
+local markup = import 'ldoc/markup'
+local prettify = import 'ldoc/prettify'
+local doc = import 'ldoc/doc'
 local unpack = utils.unpack
 local html = {}
 
@@ -331,7 +333,7 @@ function ldoc.source_ref (fun)
           lfs.mkdir(dir_data)
           -- luacheck: pop
       end
-      local file = require 'pl.file'
+      local file = import 'pl/file'
       file.copy(ldoc.icon, dir_data)
    end
 
@@ -393,4 +395,3 @@ function ldoc.source_ref (fun)
 end
 
 return html
-

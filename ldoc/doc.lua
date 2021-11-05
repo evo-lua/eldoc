@@ -1,16 +1,16 @@
 ------
 -- Defining the ldoc document model.
+local import = _G.import
 
-
-local class = require 'pl.class'
-local utils = require 'pl.utils'
-local List = require 'pl.List'
-local Map = require 'pl.Map'
-local text = require 'pl.text'
+local class = import 'pl/class'
+local utils = import 'pl/utils'
+local List = import 'pl/List'
+local Map = import 'pl/Map'
+local text = import 'pl/text'
 
 local doc = {}
-local global = require 'ldoc.builtin.globals'
-local tools = require 'ldoc.tools'
+local global = import 'ldoc/builtin/globals'
+local tools = import 'ldoc/tools'
 local split_dotted_name = tools.split_dotted_name
 
 local TAG_MULTI,TAG_ID,TAG_SINGLE,TAG_TYPE,TAG_FLAG,TAG_MULTI_LINE = 'M','id','S','T','N','ML'
@@ -405,7 +405,7 @@ function File:finish()
          end
       end
       -- luacheck: pop
-      item.names_hierarchy = require('pl.utils').split(
+      item.names_hierarchy = import('pl/utils').split(
         item.name,
         '[.:]'
       )
@@ -932,7 +932,7 @@ function Item:build_return_groups()
          groups:append(group)
          lastg = g
       end
-      --require 'pl.pretty'.dump(ret)
+      --import 'pl/pretty'.dump(ret)
       if not mods then
          self:error(quote(self.name)..' had no return?')
       end
@@ -941,7 +941,7 @@ function Item:build_return_groups()
    -- order by groups to force error groups to the end
    table.sort(groups,function(g1,g2) return g1.g < g2.g end)
    self.retgroups = groups
-   --require 'pl.pretty'.dump(groups)
+   --import 'pl/pretty'.dump(groups)
    -- cool, now see if there are any treturns that have tfields to associate with
    local fields = self.tags.field
    if fields then
@@ -959,7 +959,7 @@ function Item:build_return_groups()
                ctypes:append {name=f,type=fmods[i].type,comment=fcomments[i]}
             end end
             r.ctypes = ctypes
-            --require 'pl.pretty'.dump(ctypes)
+            --import 'pl/pretty'.dump(ctypes)
          end
       end end
    end
@@ -1022,7 +1022,7 @@ end
 
 function Item:warning(msg)
    local file = self.file and self.file.filename
-   if type(file) == 'table' then require 'pl.pretty'.dump(file); file = '?' end
+   if type(file) == 'table' then import 'pl/pretty'.dump(file); file = '?' end
    file = file or '?'
    io.stderr:write(file,':',self.lineno or '1',': ',self.name or '?',': ',msg,'\n')
    Item.had_warning = true
@@ -1323,7 +1323,7 @@ function doc.filter_objects_through_function(filter, module_list)
    local quit, quote = utils.quit, tools.quote
    if filter == 'dump' then filter = 'pl.pretty.dump' end
    local mod,name = tools.split_dotted_name(filter)
-   local ok,P = pcall(require,mod)
+   local ok,P = pcall(import,mod)
    if not ok then quit("cannot find module "..quote(mod)) end
    local ok,f = pcall(function() return P[name] end)
    if not ok or type(f) ~= 'function' then quit("dump module: no function "..quote(name)) end

@@ -1,4 +1,5 @@
-return require('ldoc.html._reset_css') .. [[
+local import = _G.import
+return import('ldoc/html/_reset_css') .. [[
 
 body {
     margin-left: 1em;
@@ -222,4 +223,4 @@ a:target + * {
 }
 
 ]]
-.. require('ldoc.html._code_css')
+.. import('ldoc/html/_code_css')

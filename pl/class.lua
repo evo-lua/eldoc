@@ -219,10 +219,10 @@ class = setmetatable({},{
     end,
     __index = function(tbl,key)
         if key == 'class' then
-            io.stderr:write('require("pl.class").class is deprecated. Use require("pl.class")\n')
+            io.stderr:write('import("pl/class").class is deprecated. Use import("pl/class")\n')
             return class
         end
-        compat = compat or require 'pl.compat'
+        compat = compat or import 'pl/compat'
         local env = compat.getfenv(2)
         return function(...)
             local c = _class(...)
@@ -262,4 +262,3 @@ end
 
 
 return class
-

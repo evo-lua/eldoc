@@ -6,7 +6,7 @@
 --
 -- @module pl.utils
 local format = string.format
-local compat = require 'pl.compat'
+local compat = import 'pl/compat'
 local stdout = io.stdout
 local append = table.insert
 local _unpack = table.unpack  -- always injected by 'compat'
@@ -120,7 +120,7 @@ do
         T = T or _G
         t = t or utils
         if type(t) == 'string' then
-            t = require (t)
+            t = import (t)
         end
         local libname = lookup_lib(T,t)
         if already_imported[t] then return end
@@ -262,7 +262,7 @@ function utils.function_arg (idx,f,msg)
     if tp == 'function' then return f end  -- no worries!
     -- ok, a string can correspond to an operator (like '==')
     if tp == 'string' then
-        if not operators then operators = require 'pl.operator'.optable end
+        if not operators then operators = import 'pl/operator'.optable end
         local fn = operators[f]
         if fn then return fn end
         local fn, err = utils.string_lambda(f)
@@ -773,5 +773,3 @@ end
 
 
 return utils
-
-

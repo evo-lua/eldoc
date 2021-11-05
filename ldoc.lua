@@ -15,19 +15,20 @@
 -- @copyright 2011
 -- @license MIT/X11
 -- @script ldoc
+local import = _G.import
 
-local class = require 'pl.class'
-local app = require 'pl.app'
-local path = require 'pl.path'
-local dir = require 'pl.dir'
-local utils = require 'pl.utils'
-local List = require 'pl.List'
-local stringx = require 'pl.stringx'
-local tablex = require 'pl.tablex'
+local class = import 'pl/class'
+local app = import 'pl/app'
+local path = import 'pl/path'
+local dir = import 'pl/dir'
+local utils = import 'pl/utils'
+local List = import 'pl/List'
+local stringx = import 'pl/stringx'
+local tablex = import 'pl/tablex'
 
 -- Penlight compatibility
 utils.unpack = utils.unpack or unpack or table.unpack
-local lapp = require 'pl.lapp'
+local lapp = import 'pl/lapp'
 
 local version = '1.4.6'
 
@@ -83,12 +84,12 @@ ldoc, a documentation generator for Lua, v]]..version..[[
   and processes <file> if 'file' was not defined in the ld file.
 ]]
 local args = lapp(usage)
-local doc = require 'ldoc.doc'
-local lang = require 'ldoc.lang'
-local tools = require 'ldoc.tools'
-local global = require 'ldoc.builtin.globals'
-local markup = require 'ldoc.markup'
-local parse = require 'ldoc.parse'
+local doc = import 'ldoc/doc'
+local lang = import 'ldoc/lang'
+local tools = import 'ldoc/tools'
+local global = import 'ldoc/builtin.globals'
+local markup = import 'ldoc/markup'
+local parse = import 'ldoc/parse'
 local KindMap = tools.KindMap
 local Item,File = doc.Item,doc.File
 local quit = utils.quit
@@ -551,7 +552,7 @@ local function add_special_project_entity (f,tags,process)
 end
 
 local function prettify_source_files(files,class,linemap)
-   local prettify = require 'ldoc.prettify'
+   local prettify = import 'ldoc/prettify'
 
    process_file_list (files, '*.*', function(f)
       local ext = path.extension(f)
@@ -795,7 +796,7 @@ if builtin_style or builtin_template then
 	uv.fs_mkdir(tmpdir, 511) -- lfs.mkdir(tmpdir) -- We can safely use the blocking version here since lfs is also synchronous
    end
    local function tmpwrite (name)
-      local ok,text = pcall(require,'ldoc.html.'..name:gsub('%.','_'))
+      local ok,text = pcall(import,'ldoc.html.'..name:gsub('%.','_'))
       if not ok then
          quit("cannot find builtin template "..name.." ("..text..")")
       end
@@ -844,7 +845,7 @@ else
   ldoc.updatetime = os.date("!%Y-%m-%d %H:%M:%S",source_date_epoch)
 end
 
-local html = require 'ldoc.html'
+local html = import 'ldoc.html'
 
 html.generate_output(ldoc, args, project)
 

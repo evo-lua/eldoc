@@ -29,7 +29,7 @@
 -- Soft Dependencies: `lxp.lom` (fallback is to use basic Lua parser)
 -- @module pl.xml
 
-local utils = require 'pl.utils'
+local utils = import 'pl/utils'
 local split         =   utils.split;
 local t_insert      =  table.insert;
 local t_concat      =  table.concat;
@@ -46,7 +46,7 @@ local print         =         print;
 local unpack        =  utils.unpack;
 local s_gsub        =   string.gsub;
 local s_find        =   string.find;
-local pcall,require,io     =   pcall,require,io
+local pcall,io     =   pcall,io
 
 local _M = {}
 local Doc = { __type = "doc" };
@@ -71,7 +71,7 @@ function _M.parse(text_or_file, is_file, use_basic)
     local parser,status,lom
     if use_basic then parser = _M.basic_parse
     else
-        status,lom = pcall(require,'lxp.lom')
+        status,lom = pcall(_G.import,'lxp/lom')
         if not status then parser = _M.basic_parse else parser = lom.parse end
     end
     if is_file then
@@ -773,4 +773,3 @@ end
 
 
 return _M
-
