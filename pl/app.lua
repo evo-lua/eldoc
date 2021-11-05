@@ -4,7 +4,7 @@
 -- Dependencies: `pl.utils`, `pl.path`
 -- @module pl.app
 
-local io,package,import = _G/io, _G.package, _G.import
+local io,package,import = _G.io, _G.package, _G.import
 local utils = import 'pl/utils'
 local path = import 'pl/path'
 

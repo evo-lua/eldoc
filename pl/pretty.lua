@@ -13,7 +13,7 @@ local mfloor, mhuge = math.floor, math.huge
 local mtype = math.type
 local utils = import 'pl/utils'
 local lexer = import 'pl/lexer'
-local debug = import 'debug'
+local debug = _G.debug
 local quote_string = import'pl/string/'.quote_string
 local assert_arg = utils.assert_arg
 
