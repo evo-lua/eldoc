@@ -3,8 +3,5 @@ let fileContents = fs.readFileSync("C_FileSystem.lua").toString();
 // console.log(fileContents.toString());
 
 var parser = require('luaparse');
-const options = {
-	scope: true
-}
-var ast = parser.parse(fileContents, options);
+var ast = parser.parse(fileContents);
 console.log(JSON.stringify(ast));
