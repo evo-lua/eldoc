@@ -3,68 +3,115 @@
     "body": [
         {
             "type": "LocalStatement",
-            "variables": [{ "type": "Identifier", "name": "fs" }],
+            "variables": [
+                {
+                    "type": "Identifier",
+                    "name": "fs",
+                    "loc": { "start": { "line": 1, "column": 6 }, "end": { "line": 1, "column": 8 } }
+                }
+            ],
             "init": [
                 {
                     "type": "CallExpression",
-                    "base": { "type": "Identifier", "name": "require" },
-                    "arguments": [{ "type": "StringLiteral", "value": null, "raw": "\"fs\"" }]
-                }
-            ]
-        },
-        {
-            "type": "LocalStatement",
-            "variables": [{ "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY" }],
-            "init": [{ "type": "StringLiteral", "value": null, "raw": "\"directory\"" }]
-        },
-        {
-            "type": "LocalStatement",
-            "variables": [{ "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_FILE" }],
-            "init": [{ "type": "StringLiteral", "value": null, "raw": "\"file\"" }]
-        },
-        {
-            "type": "LocalStatement",
-            "variables": [{ "type": "Identifier", "name": "C_FileSystem" }],
-            "init": [{ "type": "TableConstructorExpression", "fields": [] }]
-        },
-        {
-            "type": "FunctionDeclaration",
-            "identifier": {
-                "type": "MemberExpression",
-                "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "CreateDirectory" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
-            },
-            "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
-            "body": [
-                {
-                    "type": "ReturnStatement",
+                    "base": {
+                        "type": "Identifier",
+                        "name": "require",
+                        "loc": { "start": { "line": 1, "column": 11 }, "end": { "line": 1, "column": 18 } }
+                    },
                     "arguments": [
                         {
-                            "type": "CallExpression",
-                            "base": {
-                                "type": "MemberExpression",
-                                "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "mkdirp" },
-                                "base": { "type": "Identifier", "name": "fs" }
-                            },
-                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                            "type": "StringLiteral",
+                            "value": null,
+                            "raw": "\"fs\"",
+                            "loc": { "start": { "line": 1, "column": 19 }, "end": { "line": 1, "column": 23 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 1, "column": 11 }, "end": { "line": 1, "column": 24 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 24 } }
+        },
+        {
+            "type": "LocalStatement",
+            "variables": [
+                {
+                    "type": "Identifier",
+                    "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY",
+                    "loc": { "start": { "line": 3, "column": 6 }, "end": { "line": 3, "column": 36 } }
+                }
+            ],
+            "init": [
+                {
+                    "type": "StringLiteral",
+                    "value": null,
+                    "raw": "\"directory\"",
+                    "loc": { "start": { "line": 3, "column": 39 }, "end": { "line": 3, "column": 50 } }
+                }
+            ],
+            "loc": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 50 } }
+        },
+        {
+            "type": "LocalStatement",
+            "variables": [
+                {
+                    "type": "Identifier",
+                    "name": "FILE_DESCRIPTOR_TYPE_FILE",
+                    "loc": { "start": { "line": 4, "column": 6 }, "end": { "line": 4, "column": 31 } }
+                }
+            ],
+            "init": [
+                {
+                    "type": "StringLiteral",
+                    "value": null,
+                    "raw": "\"file\"",
+                    "loc": { "start": { "line": 4, "column": 34 }, "end": { "line": 4, "column": 40 } }
+                }
+            ],
+            "loc": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 40 } }
+        },
+        {
+            "type": "LocalStatement",
+            "variables": [
+                {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 6, "column": 6 }, "end": { "line": 6, "column": 18 } }
+                }
+            ],
+            "init": [
+                {
+                    "type": "TableConstructorExpression",
+                    "fields": [],
+                    "loc": { "start": { "line": 6, "column": 21 }, "end": { "line": 6, "column": 23 } }
+                }
+            ],
+            "loc": { "start": { "line": 6, "column": 0 }, "end": { "line": 6, "column": 23 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "Exists" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "CreateDirectory",
+                    "loc": { "start": { "line": 10, "column": 22 }, "end": { "line": 10, "column": 37 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 10, "column": 9 }, "end": { "line": 10, "column": 21 } }
+                },
+                "loc": { "start": { "line": 10, "column": 9 }, "end": { "line": 10, "column": 37 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 10, "column": 38 }, "end": { "line": 10, "column": 42 } }
+                }
+            ],
             "body": [
                 {
                     "type": "ReturnStatement",
@@ -74,44 +121,188 @@
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "access" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "mkdirp",
+                                    "loc": {
+                                        "start": { "line": 11, "column": 11 },
+                                        "end": { "line": 11, "column": 17 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": { "start": { "line": 11, "column": 8 }, "end": { "line": 11, "column": 10 } }
+                                },
+                                "loc": { "start": { "line": 11, "column": 8 }, "end": { "line": 11, "column": 17 } }
                             },
                             "arguments": [
-                                { "type": "Identifier", "name": "path" },
-                                { "type": "StringLiteral", "value": null, "raw": "\"R\"" }
-                            ]
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 11, "column": 18 },
+                                        "end": { "line": 11, "column": 22 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 11, "column": 8 }, "end": { "line": 11, "column": 23 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 11, "column": 1 }, "end": { "line": 11, "column": 23 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 10, "column": 0 }, "end": { "line": 12, "column": 3 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "IsFile" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "Exists",
+                    "loc": { "start": { "line": 16, "column": 22 }, "end": { "line": 16, "column": 28 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 16, "column": 9 }, "end": { "line": 16, "column": 21 } }
+                },
+                "loc": { "start": { "line": 16, "column": 9 }, "end": { "line": 16, "column": 28 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 16, "column": 29 }, "end": { "line": 16, "column": 33 } }
+                }
+            ],
+            "body": [
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "CallExpression",
+                            "base": {
+                                "type": "MemberExpression",
+                                "indexer": ".",
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "access",
+                                    "loc": {
+                                        "start": { "line": 17, "column": 11 },
+                                        "end": { "line": 17, "column": 17 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": { "start": { "line": 17, "column": 8 }, "end": { "line": 17, "column": 10 } }
+                                },
+                                "loc": { "start": { "line": 17, "column": 8 }, "end": { "line": 17, "column": 17 } }
+                            },
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 17, "column": 18 },
+                                        "end": { "line": 17, "column": 22 }
+                                    }
+                                },
+                                {
+                                    "type": "StringLiteral",
+                                    "value": null,
+                                    "raw": "\"R\"",
+                                    "loc": {
+                                        "start": { "line": 17, "column": 24 },
+                                        "end": { "line": 17, "column": 27 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 17, "column": 8 }, "end": { "line": 17, "column": 28 } }
+                        }
+                    ],
+                    "loc": { "start": { "line": 17, "column": 1 }, "end": { "line": 17, "column": 28 } }
+                }
+            ],
+            "loc": { "start": { "line": 16, "column": 0 }, "end": { "line": 18, "column": 3 } }
+        },
+        {
+            "type": "FunctionDeclaration",
+            "identifier": {
+                "type": "MemberExpression",
+                "indexer": ".",
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "IsFile",
+                    "loc": { "start": { "line": 22, "column": 22 }, "end": { "line": 22, "column": 28 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 22, "column": 9 }, "end": { "line": 22, "column": 21 } }
+                },
+                "loc": { "start": { "line": 22, "column": 9 }, "end": { "line": 22, "column": 28 } }
+            },
+            "isLocal": false,
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 22, "column": 29 }, "end": { "line": 22, "column": 33 } }
+                }
+            ],
             "body": [
                 {
                     "type": "LocalStatement",
-                    "variables": [{ "type": "Identifier", "name": "fileAttributes" }],
+                    "variables": [
+                        {
+                            "type": "Identifier",
+                            "name": "fileAttributes",
+                            "loc": { "start": { "line": 23, "column": 7 }, "end": { "line": 23, "column": 21 } }
+                        }
+                    ],
                     "init": [
                         {
                             "type": "CallExpression",
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "stat" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "stat",
+                                    "loc": {
+                                        "start": { "line": 23, "column": 27 },
+                                        "end": { "line": 23, "column": 31 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": {
+                                        "start": { "line": 23, "column": 24 },
+                                        "end": { "line": 23, "column": 26 }
+                                    }
+                                },
+                                "loc": { "start": { "line": 23, "column": 24 }, "end": { "line": 23, "column": 31 } }
                             },
-                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 23, "column": 32 },
+                                        "end": { "line": 23, "column": 36 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 23, "column": 24 }, "end": { "line": 23, "column": 37 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 23, "column": 1 }, "end": { "line": 23, "column": 37 } }
                 },
                 {
                     "type": "IfStatement",
@@ -121,16 +312,37 @@
                             "condition": {
                                 "type": "UnaryExpression",
                                 "operator": "not",
-                                "argument": { "type": "Identifier", "name": "fileAttributes" }
+                                "argument": {
+                                    "type": "Identifier",
+                                    "name": "fileAttributes",
+                                    "loc": { "start": { "line": 24, "column": 8 }, "end": { "line": 24, "column": 22 } }
+                                },
+                                "loc": { "start": { "line": 24, "column": 4 }, "end": { "line": 24, "column": 22 } }
                             },
                             "body": [
                                 {
                                     "type": "ReturnStatement",
-                                    "arguments": [{ "type": "BooleanLiteral", "value": false, "raw": "false" }]
+                                    "arguments": [
+                                        {
+                                            "type": "BooleanLiteral",
+                                            "value": false,
+                                            "raw": "false",
+                                            "loc": {
+                                                "start": { "line": 24, "column": 35 },
+                                                "end": { "line": 24, "column": 40 }
+                                            }
+                                        }
+                                    ],
+                                    "loc": {
+                                        "start": { "line": 24, "column": 28 },
+                                        "end": { "line": 24, "column": 40 }
+                                    }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 24, "column": 1 }, "end": { "line": 24, "column": 40 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 24, "column": 1 }, "end": { "line": 24, "column": 44 } }
                 },
                 {
                     "type": "ReturnStatement",
@@ -141,41 +353,107 @@
                             "left": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "type" },
-                                "base": { "type": "Identifier", "name": "fileAttributes" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "type",
+                                    "loc": {
+                                        "start": { "line": 26, "column": 23 },
+                                        "end": { "line": 26, "column": 27 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fileAttributes",
+                                    "loc": { "start": { "line": 26, "column": 8 }, "end": { "line": 26, "column": 22 } }
+                                },
+                                "loc": { "start": { "line": 26, "column": 8 }, "end": { "line": 26, "column": 27 } }
                             },
-                            "right": { "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_FILE" }
+                            "right": {
+                                "type": "Identifier",
+                                "name": "FILE_DESCRIPTOR_TYPE_FILE",
+                                "loc": { "start": { "line": 26, "column": 31 }, "end": { "line": 26, "column": 56 } }
+                            },
+                            "loc": { "start": { "line": 26, "column": 8 }, "end": { "line": 26, "column": 56 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 26, "column": 1 }, "end": { "line": 26, "column": 56 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 22, "column": 0 }, "end": { "line": 27, "column": 3 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "IsDirectory" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "IsDirectory",
+                    "loc": { "start": { "line": 31, "column": 22 }, "end": { "line": 31, "column": 33 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 31, "column": 9 }, "end": { "line": 31, "column": 21 } }
+                },
+                "loc": { "start": { "line": 31, "column": 9 }, "end": { "line": 31, "column": 33 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 31, "column": 34 }, "end": { "line": 31, "column": 38 } }
+                }
+            ],
             "body": [
                 {
                     "type": "LocalStatement",
-                    "variables": [{ "type": "Identifier", "name": "fileAttributes" }],
+                    "variables": [
+                        {
+                            "type": "Identifier",
+                            "name": "fileAttributes",
+                            "loc": { "start": { "line": 32, "column": 7 }, "end": { "line": 32, "column": 21 } }
+                        }
+                    ],
                     "init": [
                         {
                             "type": "CallExpression",
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "stat" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "stat",
+                                    "loc": {
+                                        "start": { "line": 32, "column": 27 },
+                                        "end": { "line": 32, "column": 31 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": {
+                                        "start": { "line": 32, "column": 24 },
+                                        "end": { "line": 32, "column": 26 }
+                                    }
+                                },
+                                "loc": { "start": { "line": 32, "column": 24 }, "end": { "line": 32, "column": 31 } }
                             },
-                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 32, "column": 32 },
+                                        "end": { "line": 32, "column": 36 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 32, "column": 24 }, "end": { "line": 32, "column": 37 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 32, "column": 1 }, "end": { "line": 32, "column": 37 } }
                 },
                 {
                     "type": "IfStatement",
@@ -185,16 +463,37 @@
                             "condition": {
                                 "type": "UnaryExpression",
                                 "operator": "not",
-                                "argument": { "type": "Identifier", "name": "fileAttributes" }
+                                "argument": {
+                                    "type": "Identifier",
+                                    "name": "fileAttributes",
+                                    "loc": { "start": { "line": 33, "column": 8 }, "end": { "line": 33, "column": 22 } }
+                                },
+                                "loc": { "start": { "line": 33, "column": 4 }, "end": { "line": 33, "column": 22 } }
                             },
                             "body": [
                                 {
                                     "type": "ReturnStatement",
-                                    "arguments": [{ "type": "BooleanLiteral", "value": false, "raw": "false" }]
+                                    "arguments": [
+                                        {
+                                            "type": "BooleanLiteral",
+                                            "value": false,
+                                            "raw": "false",
+                                            "loc": {
+                                                "start": { "line": 33, "column": 35 },
+                                                "end": { "line": 33, "column": 40 }
+                                            }
+                                        }
+                                    ],
+                                    "loc": {
+                                        "start": { "line": 33, "column": 28 },
+                                        "end": { "line": 33, "column": 40 }
+                                    }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 33, "column": 1 }, "end": { "line": 33, "column": 40 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 33, "column": 1 }, "end": { "line": 33, "column": 44 } }
                 },
                 {
                     "type": "ReturnStatement",
@@ -205,25 +504,59 @@
                             "left": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "type" },
-                                "base": { "type": "Identifier", "name": "fileAttributes" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "type",
+                                    "loc": {
+                                        "start": { "line": 35, "column": 23 },
+                                        "end": { "line": 35, "column": 27 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fileAttributes",
+                                    "loc": { "start": { "line": 35, "column": 8 }, "end": { "line": 35, "column": 22 } }
+                                },
+                                "loc": { "start": { "line": 35, "column": 8 }, "end": { "line": 35, "column": 27 } }
                             },
-                            "right": { "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY" }
+                            "right": {
+                                "type": "Identifier",
+                                "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY",
+                                "loc": { "start": { "line": 35, "column": 31 }, "end": { "line": 35, "column": 61 } }
+                            },
+                            "loc": { "start": { "line": 35, "column": 8 }, "end": { "line": 35, "column": 61 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 35, "column": 1 }, "end": { "line": 35, "column": 61 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 31, "column": 0 }, "end": { "line": 36, "column": 3 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "Delete" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "Delete",
+                    "loc": { "start": { "line": 40, "column": 22 }, "end": { "line": 40, "column": 28 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 40, "column": 9 }, "end": { "line": 40, "column": 21 } }
+                },
+                "loc": { "start": { "line": 40, "column": 9 }, "end": { "line": 40, "column": 28 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 40, "column": 29 }, "end": { "line": 40, "column": 33 } }
+                }
+            ],
             "body": [
                 {
                     "type": "IfStatement",
@@ -238,20 +571,65 @@
                                     "base": {
                                         "type": "MemberExpression",
                                         "indexer": ".",
-                                        "identifier": { "type": "Identifier", "name": "Exists" },
-                                        "base": { "type": "Identifier", "name": "C_FileSystem" }
+                                        "identifier": {
+                                            "type": "Identifier",
+                                            "name": "Exists",
+                                            "loc": {
+                                                "start": { "line": 41, "column": 21 },
+                                                "end": { "line": 41, "column": 27 }
+                                            }
+                                        },
+                                        "base": {
+                                            "type": "Identifier",
+                                            "name": "C_FileSystem",
+                                            "loc": {
+                                                "start": { "line": 41, "column": 8 },
+                                                "end": { "line": 41, "column": 20 }
+                                            }
+                                        },
+                                        "loc": {
+                                            "start": { "line": 41, "column": 8 },
+                                            "end": { "line": 41, "column": 27 }
+                                        }
                                     },
-                                    "arguments": [{ "type": "Identifier", "name": "path" }]
-                                }
+                                    "arguments": [
+                                        {
+                                            "type": "Identifier",
+                                            "name": "path",
+                                            "loc": {
+                                                "start": { "line": 41, "column": 28 },
+                                                "end": { "line": 41, "column": 32 }
+                                            }
+                                        }
+                                    ],
+                                    "loc": { "start": { "line": 41, "column": 8 }, "end": { "line": 41, "column": 33 } }
+                                },
+                                "loc": { "start": { "line": 41, "column": 4 }, "end": { "line": 41, "column": 33 } }
                             },
                             "body": [
                                 {
                                     "type": "ReturnStatement",
-                                    "arguments": [{ "type": "BooleanLiteral", "value": false, "raw": "false" }]
+                                    "arguments": [
+                                        {
+                                            "type": "BooleanLiteral",
+                                            "value": false,
+                                            "raw": "false",
+                                            "loc": {
+                                                "start": { "line": 41, "column": 46 },
+                                                "end": { "line": 41, "column": 51 }
+                                            }
+                                        }
+                                    ],
+                                    "loc": {
+                                        "start": { "line": 41, "column": 39 },
+                                        "end": { "line": 41, "column": 51 }
+                                    }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 41, "column": 1 }, "end": { "line": 41, "column": 51 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 41, "column": 1 }, "end": { "line": 41, "column": 55 } }
                 },
                 {
                     "type": "IfStatement",
@@ -263,10 +641,35 @@
                                 "base": {
                                     "type": "MemberExpression",
                                     "indexer": ".",
-                                    "identifier": { "type": "Identifier", "name": "IsDirectory" },
-                                    "base": { "type": "Identifier", "name": "C_FileSystem" }
+                                    "identifier": {
+                                        "type": "Identifier",
+                                        "name": "IsDirectory",
+                                        "loc": {
+                                            "start": { "line": 43, "column": 17 },
+                                            "end": { "line": 43, "column": 28 }
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "Identifier",
+                                        "name": "C_FileSystem",
+                                        "loc": {
+                                            "start": { "line": 43, "column": 4 },
+                                            "end": { "line": 43, "column": 16 }
+                                        }
+                                    },
+                                    "loc": { "start": { "line": 43, "column": 4 }, "end": { "line": 43, "column": 28 } }
                                 },
-                                "arguments": [{ "type": "Identifier", "name": "path" }]
+                                "arguments": [
+                                    {
+                                        "type": "Identifier",
+                                        "name": "path",
+                                        "loc": {
+                                            "start": { "line": 43, "column": 29 },
+                                            "end": { "line": 43, "column": 33 }
+                                        }
+                                    }
+                                ],
+                                "loc": { "start": { "line": 43, "column": 4 }, "end": { "line": 43, "column": 34 } }
                             },
                             "body": [
                                 {
@@ -277,16 +680,50 @@
                                             "base": {
                                                 "type": "MemberExpression",
                                                 "indexer": ".",
-                                                "identifier": { "type": "Identifier", "name": "rmrf" },
-                                                "base": { "type": "Identifier", "name": "fs" }
+                                                "identifier": {
+                                                    "type": "Identifier",
+                                                    "name": "rmrf",
+                                                    "loc": {
+                                                        "start": { "line": 44, "column": 12 },
+                                                        "end": { "line": 44, "column": 16 }
+                                                    }
+                                                },
+                                                "base": {
+                                                    "type": "Identifier",
+                                                    "name": "fs",
+                                                    "loc": {
+                                                        "start": { "line": 44, "column": 9 },
+                                                        "end": { "line": 44, "column": 11 }
+                                                    }
+                                                },
+                                                "loc": {
+                                                    "start": { "line": 44, "column": 9 },
+                                                    "end": { "line": 44, "column": 16 }
+                                                }
                                             },
-                                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                                            "arguments": [
+                                                {
+                                                    "type": "Identifier",
+                                                    "name": "path",
+                                                    "loc": {
+                                                        "start": { "line": 44, "column": 17 },
+                                                        "end": { "line": 44, "column": 21 }
+                                                    }
+                                                }
+                                            ],
+                                            "loc": {
+                                                "start": { "line": 44, "column": 9 },
+                                                "end": { "line": 44, "column": 22 }
+                                            }
                                         }
-                                    ]
+                                    ],
+                                    "loc": { "start": { "line": 44, "column": 2 }, "end": { "line": 44, "column": 22 } }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 43, "column": 1 }, "end": { "line": 44, "column": 22 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 43, "column": 1 }, "end": { "line": 45, "column": 4 } }
                 },
                 {
                     "type": "ReturnStatement",
@@ -296,25 +733,64 @@
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "unlink" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "unlink",
+                                    "loc": {
+                                        "start": { "line": 47, "column": 11 },
+                                        "end": { "line": 47, "column": 17 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": { "start": { "line": 47, "column": 8 }, "end": { "line": 47, "column": 10 } }
+                                },
+                                "loc": { "start": { "line": 47, "column": 8 }, "end": { "line": 47, "column": 17 } }
                             },
-                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 47, "column": 18 },
+                                        "end": { "line": 47, "column": 22 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 47, "column": 8 }, "end": { "line": 47, "column": 23 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 47, "column": 1 }, "end": { "line": 47, "column": 23 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 40, "column": 0 }, "end": { "line": 48, "column": 3 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "ReadFile" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "ReadFile",
+                    "loc": { "start": { "line": 52, "column": 22 }, "end": { "line": 52, "column": 30 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 52, "column": 9 }, "end": { "line": 52, "column": 21 } }
+                },
+                "loc": { "start": { "line": 52, "column": 9 }, "end": { "line": 52, "column": 30 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 52, "column": 31 }, "end": { "line": 52, "column": 35 } }
+                }
+            ],
             "body": [
                 {
                     "type": "ReturnStatement",
@@ -324,41 +800,112 @@
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "readFile" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "readFile",
+                                    "loc": {
+                                        "start": { "line": 53, "column": 11 },
+                                        "end": { "line": 53, "column": 19 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": { "start": { "line": 53, "column": 8 }, "end": { "line": 53, "column": 10 } }
+                                },
+                                "loc": { "start": { "line": 53, "column": 8 }, "end": { "line": 53, "column": 19 } }
                             },
-                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 53, "column": 20 },
+                                        "end": { "line": 53, "column": 24 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 53, "column": 8 }, "end": { "line": 53, "column": 25 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 53, "column": 1 }, "end": { "line": 53, "column": 25 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 52, "column": 0 }, "end": { "line": 54, "column": 3 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "ScanDirectory" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "ScanDirectory",
+                    "loc": { "start": { "line": 58, "column": 22 }, "end": { "line": 58, "column": 35 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 58, "column": 9 }, "end": { "line": 58, "column": 21 } }
+                },
+                "loc": { "start": { "line": 58, "column": 9 }, "end": { "line": 58, "column": 35 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 58, "column": 36 }, "end": { "line": 58, "column": 40 } }
+                }
+            ],
             "body": [
                 {
                     "type": "LocalStatement",
-                    "variables": [{ "type": "Identifier", "name": "directoryIterator" }],
+                    "variables": [
+                        {
+                            "type": "Identifier",
+                            "name": "directoryIterator",
+                            "loc": { "start": { "line": 59, "column": 7 }, "end": { "line": 59, "column": 24 } }
+                        }
+                    ],
                     "init": [
                         {
                             "type": "CallExpression",
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "scandir" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "scandir",
+                                    "loc": {
+                                        "start": { "line": 59, "column": 30 },
+                                        "end": { "line": 59, "column": 37 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": {
+                                        "start": { "line": 59, "column": 27 },
+                                        "end": { "line": 59, "column": 29 }
+                                    }
+                                },
+                                "loc": { "start": { "line": 59, "column": 27 }, "end": { "line": 59, "column": 37 } }
                             },
-                            "arguments": [{ "type": "Identifier", "name": "path" }]
+                            "arguments": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 59, "column": 38 },
+                                        "end": { "line": 59, "column": 42 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 59, "column": 27 }, "end": { "line": 59, "column": 43 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 59, "column": 1 }, "end": { "line": 59, "column": 43 } }
                 },
                 {
                     "type": "IfStatement",
@@ -368,84 +915,257 @@
                             "condition": {
                                 "type": "UnaryExpression",
                                 "operator": "not",
-                                "argument": { "type": "Identifier", "name": "directoryIterator" }
+                                "argument": {
+                                    "type": "Identifier",
+                                    "name": "directoryIterator",
+                                    "loc": { "start": { "line": 61, "column": 8 }, "end": { "line": 61, "column": 25 } }
+                                },
+                                "loc": { "start": { "line": 61, "column": 4 }, "end": { "line": 61, "column": 25 } }
                             },
-                            "body": [{ "type": "ReturnStatement", "arguments": [] }]
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "arguments": [],
+                                    "loc": {
+                                        "start": { "line": 61, "column": 31 },
+                                        "end": { "line": 61, "column": 37 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 61, "column": 1 }, "end": { "line": 61, "column": 37 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 61, "column": 1 }, "end": { "line": 61, "column": 41 } }
                 },
                 {
                     "type": "LocalStatement",
-                    "variables": [{ "type": "Identifier", "name": "directoryContents" }],
-                    "init": [{ "type": "TableConstructorExpression", "fields": [] }]
+                    "variables": [
+                        {
+                            "type": "Identifier",
+                            "name": "directoryContents",
+                            "loc": { "start": { "line": 63, "column": 7 }, "end": { "line": 63, "column": 24 } }
+                        }
+                    ],
+                    "init": [
+                        {
+                            "type": "TableConstructorExpression",
+                            "fields": [],
+                            "loc": { "start": { "line": 63, "column": 27 }, "end": { "line": 63, "column": 29 } }
+                        }
+                    ],
+                    "loc": { "start": { "line": 63, "column": 1 }, "end": { "line": 63, "column": 29 } }
                 },
                 {
                     "type": "ForGenericStatement",
-                    "variables": [{ "type": "Identifier", "name": "directoryItemInfo" }],
-                    "iterators": [{ "type": "Identifier", "name": "directoryIterator" }],
+                    "variables": [
+                        {
+                            "type": "Identifier",
+                            "name": "directoryItemInfo",
+                            "loc": { "start": { "line": 64, "column": 5 }, "end": { "line": 64, "column": 22 } }
+                        }
+                    ],
+                    "iterators": [
+                        {
+                            "type": "Identifier",
+                            "name": "directoryIterator",
+                            "loc": { "start": { "line": 64, "column": 26 }, "end": { "line": 64, "column": 43 } }
+                        }
+                    ],
                     "body": [
                         {
                             "type": "LocalStatement",
-                            "variables": [{ "type": "Identifier", "name": "name" }],
+                            "variables": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "name",
+                                    "loc": { "start": { "line": 65, "column": 8 }, "end": { "line": 65, "column": 12 } }
+                                }
+                            ],
                             "init": [
                                 {
                                     "type": "MemberExpression",
                                     "indexer": ".",
-                                    "identifier": { "type": "Identifier", "name": "name" },
-                                    "base": { "type": "Identifier", "name": "directoryItemInfo" }
+                                    "identifier": {
+                                        "type": "Identifier",
+                                        "name": "name",
+                                        "loc": {
+                                            "start": { "line": 65, "column": 33 },
+                                            "end": { "line": 65, "column": 37 }
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "Identifier",
+                                        "name": "directoryItemInfo",
+                                        "loc": {
+                                            "start": { "line": 65, "column": 15 },
+                                            "end": { "line": 65, "column": 32 }
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": { "line": 65, "column": 15 },
+                                        "end": { "line": 65, "column": 37 }
+                                    }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 65, "column": 2 }, "end": { "line": 65, "column": 37 } }
                         },
                         {
                             "type": "LocalStatement",
-                            "variables": [{ "type": "Identifier", "name": "type" }],
+                            "variables": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "type",
+                                    "loc": { "start": { "line": 66, "column": 8 }, "end": { "line": 66, "column": 12 } }
+                                }
+                            ],
                             "init": [
                                 {
                                     "type": "MemberExpression",
                                     "indexer": ".",
-                                    "identifier": { "type": "Identifier", "name": "type" },
-                                    "base": { "type": "Identifier", "name": "directoryItemInfo" }
+                                    "identifier": {
+                                        "type": "Identifier",
+                                        "name": "type",
+                                        "loc": {
+                                            "start": { "line": 66, "column": 33 },
+                                            "end": { "line": 66, "column": 37 }
+                                        }
+                                    },
+                                    "base": {
+                                        "type": "Identifier",
+                                        "name": "directoryItemInfo",
+                                        "loc": {
+                                            "start": { "line": 66, "column": 15 },
+                                            "end": { "line": 66, "column": 32 }
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": { "line": 66, "column": 15 },
+                                        "end": { "line": 66, "column": 37 }
+                                    }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 66, "column": 2 }, "end": { "line": 66, "column": 37 } }
                         },
                         {
                             "type": "LocalStatement",
-                            "variables": [{ "type": "Identifier", "name": "canWalkRecursively" }],
+                            "variables": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "canWalkRecursively",
+                                    "loc": { "start": { "line": 69, "column": 8 }, "end": { "line": 69, "column": 26 } }
+                                }
+                            ],
                             "init": [
                                 {
                                     "type": "BinaryExpression",
                                     "operator": "==",
-                                    "left": { "type": "Identifier", "name": "type" },
-                                    "right": { "type": "Identifier", "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY" }
+                                    "left": {
+                                        "type": "Identifier",
+                                        "name": "type",
+                                        "loc": {
+                                            "start": { "line": 69, "column": 30 },
+                                            "end": { "line": 69, "column": 34 }
+                                        }
+                                    },
+                                    "right": {
+                                        "type": "Identifier",
+                                        "name": "FILE_DESCRIPTOR_TYPE_DIRECTORY",
+                                        "loc": {
+                                            "start": { "line": 69, "column": 38 },
+                                            "end": { "line": 69, "column": 68 }
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": { "line": 69, "column": 30 },
+                                        "end": { "line": 69, "column": 68 }
+                                    }
                                 }
-                            ]
+                            ],
+                            "loc": { "start": { "line": 69, "column": 2 }, "end": { "line": 69, "column": 69 } }
                         },
                         {
                             "type": "AssignmentStatement",
                             "variables": [
                                 {
                                     "type": "IndexExpression",
-                                    "base": { "type": "Identifier", "name": "directoryContents" },
-                                    "index": { "type": "Identifier", "name": "name" }
+                                    "base": {
+                                        "type": "Identifier",
+                                        "name": "directoryContents",
+                                        "loc": {
+                                            "start": { "line": 70, "column": 2 },
+                                            "end": { "line": 70, "column": 19 }
+                                        }
+                                    },
+                                    "index": {
+                                        "type": "Identifier",
+                                        "name": "name",
+                                        "loc": {
+                                            "start": { "line": 70, "column": 20 },
+                                            "end": { "line": 70, "column": 24 }
+                                        }
+                                    },
+                                    "loc": { "start": { "line": 70, "column": 2 }, "end": { "line": 70, "column": 25 } }
                                 }
                             ],
-                            "init": [{ "type": "Identifier", "name": "canWalkRecursively" }]
+                            "init": [
+                                {
+                                    "type": "Identifier",
+                                    "name": "canWalkRecursively",
+                                    "loc": {
+                                        "start": { "line": 70, "column": 28 },
+                                        "end": { "line": 70, "column": 46 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 70, "column": 2 }, "end": { "line": 70, "column": 46 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 64, "column": 1 }, "end": { "line": 71, "column": 4 } }
                 },
-                { "type": "ReturnStatement", "arguments": [{ "type": "Identifier", "name": "directoryContents" }] }
-            ]
+                {
+                    "type": "ReturnStatement",
+                    "arguments": [
+                        {
+                            "type": "Identifier",
+                            "name": "directoryContents",
+                            "loc": { "start": { "line": 73, "column": 8 }, "end": { "line": 73, "column": 25 } }
+                        }
+                    ],
+                    "loc": { "start": { "line": 73, "column": 1 }, "end": { "line": 73, "column": 25 } }
+                }
+            ],
+            "loc": { "start": { "line": 58, "column": 0 }, "end": { "line": 74, "column": 3 } }
         },
         {
             "type": "FunctionDeclaration",
             "identifier": {
                 "type": "MemberExpression",
                 "indexer": ".",
-                "identifier": { "type": "Identifier", "name": "WriteFile" },
-                "base": { "type": "Identifier", "name": "C_FileSystem" }
+                "identifier": {
+                    "type": "Identifier",
+                    "name": "WriteFile",
+                    "loc": { "start": { "line": 79, "column": 22 }, "end": { "line": 79, "column": 31 } }
+                },
+                "base": {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 79, "column": 9 }, "end": { "line": 79, "column": 21 } }
+                },
+                "loc": { "start": { "line": 79, "column": 9 }, "end": { "line": 79, "column": 31 } }
             },
             "isLocal": false,
-            "parameters": [{ "type": "Identifier", "name": "path" }, { "type": "Identifier", "name": "data" }],
+            "parameters": [
+                {
+                    "type": "Identifier",
+                    "name": "path",
+                    "loc": { "start": { "line": 79, "column": 32 }, "end": { "line": 79, "column": 36 } }
+                },
+                {
+                    "type": "Identifier",
+                    "name": "data",
+                    "loc": { "start": { "line": 79, "column": 38 }, "end": { "line": 79, "column": 42 } }
+                }
+            ],
             "body": [
                 {
                     "type": "ReturnStatement",
@@ -455,18 +1175,55 @@
                             "base": {
                                 "type": "MemberExpression",
                                 "indexer": ".",
-                                "identifier": { "type": "Identifier", "name": "writeFile" },
-                                "base": { "type": "Identifier", "name": "fs" }
+                                "identifier": {
+                                    "type": "Identifier",
+                                    "name": "writeFile",
+                                    "loc": {
+                                        "start": { "line": 81, "column": 11 },
+                                        "end": { "line": 81, "column": 20 }
+                                    }
+                                },
+                                "base": {
+                                    "type": "Identifier",
+                                    "name": "fs",
+                                    "loc": { "start": { "line": 81, "column": 8 }, "end": { "line": 81, "column": 10 } }
+                                },
+                                "loc": { "start": { "line": 81, "column": 8 }, "end": { "line": 81, "column": 20 } }
                             },
                             "arguments": [
-                                { "type": "Identifier", "name": "path" },
-                                { "type": "Identifier", "name": "data" },
-                                { "type": "BooleanLiteral", "value": true, "raw": "true" }
-                            ]
+                                {
+                                    "type": "Identifier",
+                                    "name": "path",
+                                    "loc": {
+                                        "start": { "line": 81, "column": 21 },
+                                        "end": { "line": 81, "column": 25 }
+                                    }
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "name": "data",
+                                    "loc": {
+                                        "start": { "line": 81, "column": 27 },
+                                        "end": { "line": 81, "column": 31 }
+                                    }
+                                },
+                                {
+                                    "type": "BooleanLiteral",
+                                    "value": true,
+                                    "raw": "true",
+                                    "loc": {
+                                        "start": { "line": 81, "column": 33 },
+                                        "end": { "line": 81, "column": 37 }
+                                    }
+                                }
+                            ],
+                            "loc": { "start": { "line": 81, "column": 8 }, "end": { "line": 81, "column": 38 } }
                         }
-                    ]
+                    ],
+                    "loc": { "start": { "line": 81, "column": 1 }, "end": { "line": 81, "column": 38 } }
                 }
-            ]
+            ],
+            "loc": { "start": { "line": 79, "column": 0 }, "end": { "line": 82, "column": 3 } }
         },
         {
             "type": "AssignmentStatement",
@@ -474,40 +1231,144 @@
                 {
                     "type": "MemberExpression",
                     "indexer": ".",
-                    "identifier": { "type": "Identifier", "name": "C_FileSystem" },
-                    "base": { "type": "Identifier", "name": "_G" }
+                    "identifier": {
+                        "type": "Identifier",
+                        "name": "C_FileSystem",
+                        "loc": { "start": { "line": 84, "column": 3 }, "end": { "line": 84, "column": 15 } }
+                    },
+                    "base": {
+                        "type": "Identifier",
+                        "name": "_G",
+                        "loc": { "start": { "line": 84, "column": 0 }, "end": { "line": 84, "column": 2 } }
+                    },
+                    "loc": { "start": { "line": 84, "column": 0 }, "end": { "line": 84, "column": 15 } }
                 }
             ],
-            "init": [{ "type": "Identifier", "name": "C_FileSystem" }]
+            "init": [
+                {
+                    "type": "Identifier",
+                    "name": "C_FileSystem",
+                    "loc": { "start": { "line": 84, "column": 18 }, "end": { "line": 84, "column": 30 } }
+                }
+            ],
+            "loc": { "start": { "line": 84, "column": 0 }, "end": { "line": 84, "column": 30 } }
         }
     ],
+    "loc": { "start": { "line": 1, "column": 0 }, "end": { "line": 84, "column": 30 } },
     "comments": [
-        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": "- TODO", "raw": "--- TODO" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": " Read from a file", "raw": "-- Read from a file" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": "- Scan a directory (duh)", "raw": "--- Scan a directory (duh)" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
+        {
+            "type": "Comment",
+            "value": "- TODO",
+            "raw": "--- TODO",
+            "loc": { "start": { "line": 8, "column": 0 }, "end": { "line": 8, "column": 8 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 9, "column": 0 }, "end": { "line": 9, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": "- TODO",
+            "raw": "--- TODO",
+            "loc": { "start": { "line": 14, "column": 0 }, "end": { "line": 14, "column": 8 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": "- TODO",
+            "raw": "--- TODO",
+            "loc": { "start": { "line": 20, "column": 0 }, "end": { "line": 20, "column": 8 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 21, "column": 0 }, "end": { "line": 21, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": "- TODO",
+            "raw": "--- TODO",
+            "loc": { "start": { "line": 29, "column": 0 }, "end": { "line": 29, "column": 8 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 30, "column": 0 }, "end": { "line": 30, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": "- TODO",
+            "raw": "--- TODO",
+            "loc": { "start": { "line": 38, "column": 0 }, "end": { "line": 38, "column": 8 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 39, "column": 0 }, "end": { "line": 39, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": " Read from a file",
+            "raw": "-- Read from a file",
+            "loc": { "start": { "line": 50, "column": 0 }, "end": { "line": 50, "column": 19 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 51, "column": 0 }, "end": { "line": 51, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": "- Scan a directory (duh)",
+            "raw": "--- Scan a directory (duh)",
+            "loc": { "start": { "line": 56, "column": 0 }, "end": { "line": 56, "column": 26 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 57, "column": 0 }, "end": { "line": 57, "column": 14 } }
+        },
         {
             "type": "Comment",
             "value": " Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly",
-            "raw": "-- Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly"
+            "raw": "-- Introducing a \"directory\" flag will be useful to implement Walk(), or for users to query the type directly",
+            "loc": { "start": { "line": 68, "column": 2 }, "end": { "line": 68, "column": 111 } }
         },
-        { "type": "Comment", "value": "- Write to a file", "raw": "--- Write to a file" },
-        { "type": "Comment", "value": " @param path", "raw": "-- @param path" },
-        { "type": "Comment", "value": " @param data", "raw": "-- @param data" },
+        {
+            "type": "Comment",
+            "value": "- Write to a file",
+            "raw": "--- Write to a file",
+            "loc": { "start": { "line": 76, "column": 0 }, "end": { "line": 76, "column": 19 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param path",
+            "raw": "-- @param path",
+            "loc": { "start": { "line": 77, "column": 0 }, "end": { "line": 77, "column": 14 } }
+        },
+        {
+            "type": "Comment",
+            "value": " @param data",
+            "raw": "-- @param data",
+            "loc": { "start": { "line": 78, "column": 0 }, "end": { "line": 78, "column": 14 } }
+        },
         {
             "type": "Comment",
             "value": " Always make parent directories, as that's more convenient",
-            "raw": "-- Always make parent directories, as that's more convenient"
+            "raw": "-- Always make parent directories, as that's more convenient",
+            "loc": { "start": { "line": 80, "column": 1 }, "end": { "line": 80, "column": 61 } }
         }
     ]
 }
