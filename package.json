@@ -18,5 +18,8 @@
   "homepage": "https://github.com/evo-lua/eldoc#readme",
   "dependencies": {
     "luaparse": "0.3.1"
+  },
+  "devDependencies": {
+    "mocha": "9.1.3"
   }
 }
